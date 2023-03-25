@@ -57,7 +57,6 @@ p{
 
 .headderBlack{
     width:100%;
-    margin-bottom: 1.5rem;
     background-color: $color-oscuro;
     color:$color-blanco;
     display: grid;
@@ -143,6 +142,176 @@ p{
         background-color: $color-principal;
     }
 }
+#jornadaSelect{
+    width: 7rem;
+}
+
+.recibo{
+    form{
+        background-color: $color-claro;
+        #datos{
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 0;
+            .row{
+                display:flex;
+                width: 100%;
+                font-size: 1.2rem;
+                margin: 0.5rem auto;
+                text-align: start;
+                .columna1{
+                    width: 57%;
+                    margin-left: 1rem;
+                    
+                    label{
+                        text-transform: uppercase   ;
+                    }
+                }
+                .columna2{
+                    width: 43%;
+                    margin-right: 1rem;
+                    
+                    
+                    label{
+                        text-transform: uppercase   ;
+                    }
+                }
+
+            }
+            #boton_calcular{
+                .boton_calcular_aceptar{
+                    background-color: $color-oscuro;
+                    color:$color-blanco;
+                    text-transform: uppercase;
+                    font-size: 1.5rem;
+                    width:18rem;
+                    margin: 0.5rem auto;
+                    padding: 0.5rem;
+                    border-radius: 2rem;
+                }
+
+            }
+        }
+    }
+    .tapiz_recibo{
+        padding: 1.5rem 0;
+        display: grid;
+        grid-template-columns:50% 10% 10% 10% 10% 10%;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+        "titulo titulo titulo titulo titulo titulo"
+        "recibo recibo recibo recibo recibo recibo"
+        "subtotal subtotal subtotal subtotal subtotal subtotal"
+        "total total total total total total";
+        font-size: 1rem;
+        #titulo{
+            grid-area: titulo;
+            display:flex;
+            height: 100%;
+            align-items: center;
+            font-weight: 600;
+            border-bottom: 1px solid $color-oscuro;
+            text-transform: uppercase;
+            .columnaBase, .columnaDescuento, .columnaNoRemunerativo, .columnaRemunerativo, .columnaUnidad{
+                text-align: center;
+            }
+        }
+        #calculo{
+            grid-area: recibo;
+            .rowRecibo{
+                border-bottom: 1px solid $color-muted;
+            }
+        }
+        #sub_total{
+            grid-area: subtotal;
+            display:flex;
+            height: 100%;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            border-bottom: 1px solid $color-oscuro;
+            text-transform: uppercase;
+            .rowRecibo{
+                width: 100%;
+                #r_20_1{
+                    width: 70%;
+                    text-align: end;
+                }
+                #r_20_3, #r_20_4, #r_20_5,{
+                    width: 10%;
+                    text-align: end;
+                }
+            }
+            
+        }
+        #total{
+            grid-area: total;
+            display:flex;
+            height: 100%;
+            align-items: center;
+            font-weight: 600;
+            border-bottom: 1px solid $color-oscuro;
+            text-transform: uppercase;
+            .rowRecibo{
+                width: 100%;
+                #r_21_4{
+                    width: 90%;
+                    text-align: end;
+                }
+                #r_21_5{
+                    width: 10%;
+                    text-align: end;
+                }
+            }
+            
+        }
+        .rowRecibo{
+            display: flex;
+
+            .columnaConcepto{
+                // background-color:$color-contraste;
+                width: 50%;
+                padding-left: 1rem;
+                
+            }
+            .columnaUnidad{
+                // background-color:$color-blanco;
+                width: 10%;
+                text-align: end;
+                padding-right: 1rem;
+            }
+            .columnaBase{
+                // background-color:$color-contraste;
+                width: 10%;
+                text-align: end;
+                padding-right: 1rem;
+            }
+            .columnaRemunerativo{
+                // background-color:$color-blanco;
+                width: 10%;
+                text-align: end;
+                padding-right: 1rem;
+            }
+            .columnaNoRemunerativo{
+                // background-color:$color-contraste;
+                width: 10%;
+                text-align: end;
+                padding-right: 1rem;
+            }
+            .columnaDescuento{
+                // background-color:$color-blanco;
+                width: 10%;
+                text-align: end;
+                padding-right: 1rem;
+            }
+        }
+        
+    }
+}
 
 @media screen and (min-width:768px){
     .headderBlack{
@@ -177,6 +346,10 @@ p{
            margin:0 auto;
         }
           
+    }
+    .recibo{
+        width: 80%;
+        margin: 0 auto;
     }
 }
   

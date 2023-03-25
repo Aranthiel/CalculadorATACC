@@ -24,8 +24,7 @@
     
 </head>
 <body>
-    <header>        
-        
+    <header> 
         <div class="headderBlack">
             <div class="logo">
                 <a href="https://www.atacc.com.ar/">
@@ -61,8 +60,727 @@
         </div>
     </header>
     <main>
-        <div class="azul">
-            Hola, este es el main
+        <div class="recibo">
+            <form action="" method="" name="">            	
+            	<div id="datos">
+                    <div class="row">
+                        <div class="columna1" id="categoria">
+                            <label for="categoriaSelect">Categoria: </label>
+                            <select name="categoriaSelect" id="categoriaSelect">
+                                <!-- la idea es que las option se generen con un mapeo del JSON, de forma que solo sean opciones aquellos meses de ese año que tienen informacion en el JSON-->
+                                <option value="01">Mantenimiento</option>
+                                <option value="02">Administrativo</option>
+                                <option value="03">Operaciones</option>  
+                            </select>
+                        </div>
+                        <div class="columna2" id="jornada"> <!-- Solo se habilita si la categoría seleccionada es operaciones -->
+                            <label for="jornadaSelect">Jornada: </label>
+                            <input type="number" name="jornadaSelect" id="jornadaSelect" placeholder="Hs semanales"> </imput>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columna1" id="anio">
+                            <label for="anioSelect">Año: </label>
+                            <select name="anioSelect" id="anioSelect">
+                                <!-- la idea es que las option se generen con un  mapeo del JSON, de forma que solo sean opciones aquellos años que tienen informacion en el JSON-->
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023" selected="">2023</option>
+                                                                            
+                            </select>
+                        </div>
+                        <div class="columna2" id="mes">
+                            <label for="mesSelect">Mes: </label>
+                            <select name="mesSelect" id="mesSelect">
+                                <!-- la idea es que las option se generen con un mapeo del JSON, de forma que solo sean opciones aquellos meses de ese año que tienen informacion en el JSON-->
+                                <option value="Enero">Enero</option>
+                                <option value="Febrero">Febrero</option>
+                                <option value="Marzo" selected="">Marzo</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Mayo">Mayo</option>
+                                <option value="Junio">Junio</option>
+                                <option value="Julio">Julio</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Septiembre">Septiembre</option>
+                                <option value="Octubre">Octubre</option>
+                                <option value="Noviembre">Noviembre</option>
+                                <option value="Diciembre">Diciembre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columna1" id="licencia">
+                            <label for="licenciaSelect">Asistencia: </label>
+                            <select name="licenciaSelect" id="licenciaSelect">
+                                <!-- motrar icono de ayuda que indicque cuando ul,a licencia es con goce y cuando es sin goce-->
+                                <option value="no">No</option>
+                                <option value="02">Con goce de sueldo</option>
+                                <option value="03">Sin goce de sueldo</option>  
+                                <option value="04">Suspención</option> 
+                            </select>
+                        </div>
+                        <div class="columna2" id="diasLicencia">
+                            <label for="diasLicenciaSelect">Dias ausente: </label>
+                            <select name="diasLicenciaSelect" id="diasLicenciaSelect">
+                                <!-- solo se habilita en caso de que haya habido ausencias en el mes -->
+                                <option value="0">00</option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columna1" id="antiguedad">
+                            <label for="antiguedadSelect">Antigüedad: </label>
+                            <select name="antiguedadSelect" id="antiguedadSelect">
+                                <!-- deberia haber 50 opciones pero me parece un montòn -->
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                        <div class="columna2" id="vacaciones"> <!-- calcula plus vacacional segun antiguedad -->
+                            <label for="vacacionesSelect">Vacaciones</label>
+                            <select name="vacacionesSelect" id="vacacionesSelect">
+                                <option value="00">no</option>
+                                <option value="01">si</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columna1" id="hsExtra50">
+                            <label for="hsExtra50Select">Horas Extras 50%: </label>
+                            <select name="hsExtra50Select" id="hsExtra50Select">
+                                <!-- solo se habilita en caso de que haya habido ausencias en el mes -->
+                                <option value="0" selected>00</option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                        <div class="columna2" id="hsExtra100">
+                            <label for="hsExtra100Select">Horas Extras 100%: </label>
+                            <select name="hsExtra100Select" id="hsExtra100Select">
+                                
+                                <option value="0" selected>00</option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                                <option value="24">24</option>
+                                <option value="25">25</option>
+                                <option value="26">26</option>
+                                <option value="27">27</option>
+                                <option value="28">28</option>
+                                <option value="29">29</option>
+                                <option value="30">30</option>
+                                <option value="31">31</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="columna1" id="afiliadoAtacc">
+                            <label for="afiliadoAtaccSelect">Afiliado ATACC: </label>
+                            <select name="afiliadoAtaccSelect" id="afiliadoAtaccSelect">
+                                <option value="01">si</option>
+                                <option value="02">no</option>
+                            </select>
+                        </div>
+                        <div class="columna2" id="afiliadoConexo">
+                            <label for="afiliadoConexoSelect">Afiliado Conexo: </label>
+                            <select name="afiliadoConexoSelect" id="afiliadoConexoSelect">
+                                <option value="01">si</option>
+                                <option value="02">no</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="boton_calcular">
+                        <button class="boton_calcular_aceptar">Calcular</button>
+                    </div>
+                </div>
+            </form>	
+            <div class="tapiz_recibo">
+                <div  class="rowRecibo" id="titulo">
+                    <div class="columnaConcepto" id="titulo_2_1">
+                        Concepto
+                    </div>
+                    <div class="columnaUnidad" id="titulo_2_2">
+                        Unidad
+                    </div>
+                    <div class="columnaBase" id="titulo_2_3">
+                        Base
+                    </div>
+                    <div class="columnaRemunerativo" id="titulo_2_4">
+                        Rem
+                    </div>
+                    <div class="columnaNoRemunerativo" id="titulo_2_5">
+                        No Rem 
+                    </div>
+                    <div class="columnaDescuento" id="titulo_2_6">
+                        Desc
+                    </div>
+                </div>            
+                <div id="calculo">
+                    <div  class="rowRecibo"id="linea_1">
+                        <div class="columnaConcepto" id="descripcion_1">
+                            Basico
+                        </div>
+                        <div class="columnaUnidad" id="r_1_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_1_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_1_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_1_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_1_5">
+                            
+                        </div>
+                    </div>
+                    <div  class="rowRecibo"id="linea_2">
+                        <div class="columnaConcepto" id="descripcion_2">
+                            Antiguedad
+                        </div>
+                        <div class="columnaUnidad" id="r_2_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_2_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_2_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_2_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_2_5">
+                            
+                        </div>
+                    </div>
+                    <div  class="rowRecibo"id="linea_3">
+                        <div class="columnaConcepto" id="descripcion_3">
+                        Asistencia y Puntualidad
+                        </div>
+                        <div class="columnaUnidad" id="r_3_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_3_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_3_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_3_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_3_5">
+                            
+                        </div>
+                    </div>
+                    <div  class="rowRecibo"id="linea_4">
+                        <div class="columnaConcepto" id="descripcion_4">
+                        Adicional por Zona
+                        </div>
+                        <div class="columnaUnidad" id="r_4_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_4_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_4_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_4_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_4_5">
+                            
+                        </div>
+                    </div>
+                    <div  class="rowRecibo"id="linea_5">
+                        <div class="columnaConcepto" id="descripcion_5">
+                        Horas Extras al 50%
+                        </div>
+                        <div class="columnaUnidad" id="r_5_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_5_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_5_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_5_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_5_5">
+                            
+                        </div>
+                    </div>
+                    <div  class="rowRecibo"id="linea_6">
+                        <div class="columnaConcepto" id="descripcion_6">
+                        Horas Extras al 100%
+                        </div>
+                        <div class="columnaUnidad" id="r_6_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_6_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_6_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_6_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_6_5">
+                            
+                        </div>
+                    </div>
+                    <div  class="rowRecibo"id="linea_blanca">
+                        <div class="columnaConcepto" id="descripcion_7">
+                        
+                        </div>
+                        <div class="columnaUnidad" id="r_7_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_7_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_7_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_7_4">
+                                 
+                        </div>
+                        <div class="columnaDescuento" id="r_7_5">
+                            
+                        </div>
+                    </div>    
+                    <div  class="rowRecibo"id="linea_7">
+                        <div class="columnaConcepto" id="descripcion_7">
+                        Acuerdo
+                        </div>
+                        <div class="columnaUnidad" id="r_7_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_7_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_7_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_7_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_7_5">
+                            
+                        </div>
+                    </div>
+                    <div  class="rowRecibo"id="linea_8">
+                        <div class="columnaConcepto" id="descripcion_8">
+                        Antiguedad (NR)
+                        </div>
+                        <div class="columnaUnidad" id="r_8_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_8_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_8_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_8_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_8_5">
+                            
+                        </div>
+                    </div>
+                    
+                    <div  class="rowRecibo"id="linea_9">
+                        <div class="columnaConcepto" id="descripcion_9">
+                        Asistencia y Puntualidad (NR)            	
+                        </div>
+                        <div class="columnaUnidad" id="r_9_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_9_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_9_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_9_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_9_5">
+                            
+                        </div>
+                    </div>
+                    <div  class="rowRecibo"id="linea_10">
+                        <div class="columnaConcepto" id="descripcion_10">
+                        Adicional por Zona (NR)
+                        </div>
+                        <div class="columnaUnidad" id="r_10_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_10_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_10_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_10_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_10_5">
+                            
+                        </div>
+                    </div>
+                    <div class="rowRecibo" id="linea_11">
+                        <div class="columnaConcepto" id="descripcion_11">
+                        Horas Extras al 50% (NR)
+                        </div>
+                        <div class="columnaUnidad" id="r_11_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_11_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_11_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_11_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_11_5">
+                            
+                        </div>
+                    </div>
+                    <div  class="rowRecibo"id="linea_12">
+                        <div class="columnaConcepto" id="descripcion_12">
+                        Horas Extras al 100% (NR)
+                        </div>
+                        <div class="columnaUnidad" id="r_12_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_12_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_12_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_12_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_12_5">
+                            
+                        </div>
+                    </div>
+                    <div class="rowRecibo" id="linea_blanca">
+                        <div class="columnaConcepto" id="descripcion_7">
+                        
+                        </div>
+                        <div class="columnaUnidad" id="r_7_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_7_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_7_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_7_4">
+                                 
+                        </div>
+                        <div class="columnaDescuento" id="r_7_5">
+                            
+                        </div>
+                    </div>
+    
+                    <div class="rowRecibo" id="linea_13">
+                        <div class="columnaConcepto" id="descripcion_13">
+                        Jubilacion
+                        </div>
+                        <div class="columnaUnidad" id="r_13_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_13_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_13_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_13_4">
+                                
+                        </div>
+                        <div class="columnaDescuento" id="r_13_5">
+                            
+                        </div>
+                    </div>
+                    <div class="rowRecibo" id="linea_14">
+                        <div class="columnaConcepto" id="descripcion_14">
+                        Ley 19.032
+                        </div>
+                        <div class="columnaUnidad" id="r_14_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_14_2">
+                                
+                        </div>
+                        <div class="columnaRemunerativo" id="r_14_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_14_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_14_5">
+                            
+                        </div>
+                    </div>
+                    <div class="rowRecibo" id="linea_15">
+                        <div class="columnaConcepto" id="descripcion_15">
+                        Obra Social
+                        </div>
+                        <div class="columnaUnidad" id="r_15_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_15_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_15_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_15_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_15_5">
+                            
+                        </div>
+                    </div>
+                    <div class="rowRecibo" id="linea_16">
+                        <div class="columnaConcepto" id="descripcion_16">
+                        S.E.C. Art. 100 CCT 130/75
+                        </div>
+                        <div class="columnaUnidad" id="r_16_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_16_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_16_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_16_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_16_5">
+                            
+                        </div>
+                    </div>
+                    <div class="rowRecibo" id="linea_17">
+                        <div class="columnaConcepto" id="descripcion_17">
+                        F.A.E.C. y S. Art. 100 CCT 130/75
+                        </div>
+                        <div class="columnaUnidad" id="r_17_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_17_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_17_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_17_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_17_5">
+                            
+                        </div>
+                    </div>
+                    <div class="rowRecibo" id="linea_18">
+                        <div class="columnaConcepto" id="descripcion_18">
+                        S.E.C. Art. 101 CCT 130/75
+                        </div>
+                        <div class="columnaUnidad" id="r_18_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_18_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_18_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_18_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_18_5">
+                            
+                        </div>
+                    </div>
+                    <div class="rowRecibo" id="linea_19">
+                        <div class="columnaConcepto" id="descripcion_19">
+                        Aporte Fijo OSECAC
+                        </div>
+                        <div class="columnaUnidad" id="r_19_1">
+                            
+                        </div>
+                        <div class="columnaBase" id="r_19_2">
+                            
+                        </div>
+                        <div class="columnaRemunerativo" id="r_19_3">
+                            
+                        </div>
+                        <div class="columnaNoRemunerativo" id="r_19_4">
+                            
+                        </div>
+                        <div class="columnaDescuento" id="r_19_5">
+                            
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="sub_total">
+                    <div class="rowRecibo" id="linea_20">
+                        <div id="descripcion_20">
+                     
+                        </div>
+                        <div id="r_20_1">
+                            Sub Totales
+                        </div>
+                        <div id="r_20_3">
+                            $
+                        </div>
+                        <div id="r_20_4">
+                            $
+                        </div>
+                        <div id="r_20_5" align="right">
+                            $
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="total">
+                    <div class="rowRecibo" id="linea_21">
+                        <div id="r_21_4">
+                            Neto $
+                        </div>
+                        <div id="r_21_5">
+                            tratatata
+                        </div>
+                    </div>
+                </div>
+			</div>
         </div>
     </main>
     <footer>

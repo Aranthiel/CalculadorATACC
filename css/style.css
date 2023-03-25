@@ -36,7 +36,6 @@ p {
 
 .headderBlack {
   width: 100%;
-  margin-bottom: 1.5rem;
   background-color: #0f012e;
   color: #F4F9F0;
   display: grid;
@@ -103,6 +102,125 @@ p {
     color: #F4F9F0;
     background-color: #0093dd; }
 
+#jornadaSelect {
+  width: 7rem; }
+
+.recibo form {
+  background-color: #d5ebf6; }
+  .recibo form #datos {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0; }
+    .recibo form #datos .row {
+      display: flex;
+      width: 100%;
+      font-size: 1.2rem;
+      margin: 0.5rem auto;
+      text-align: start; }
+      .recibo form #datos .row .columna1 {
+        width: 57%;
+        margin-left: 1rem; }
+        .recibo form #datos .row .columna1 label {
+          text-transform: uppercase; }
+      .recibo form #datos .row .columna2 {
+        width: 43%;
+        margin-right: 1rem; }
+        .recibo form #datos .row .columna2 label {
+          text-transform: uppercase; }
+    .recibo form #datos #boton_calcular .boton_calcular_aceptar {
+      background-color: #0f012e;
+      color: #F4F9F0;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      width: 18rem;
+      margin: 0.5rem auto;
+      padding: 0.5rem;
+      border-radius: 2rem; }
+
+.recibo .tapiz_recibo {
+  padding: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 50% 10% 10% 10% 10% 10%;
+  grid-template-rows: auto auto auto auto;
+  grid-template-areas: "titulo titulo titulo titulo titulo titulo" "recibo recibo recibo recibo recibo recibo" "subtotal subtotal subtotal subtotal subtotal subtotal" "total total total total total total";
+  font-size: 1rem; }
+  .recibo .tapiz_recibo #titulo {
+    grid-area: titulo;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-weight: 600;
+    border-bottom: 1px solid #0f012e;
+    text-transform: uppercase; }
+    .recibo .tapiz_recibo #titulo .columnaBase, .recibo .tapiz_recibo #titulo .columnaDescuento, .recibo .tapiz_recibo #titulo .columnaNoRemunerativo, .recibo .tapiz_recibo #titulo .columnaRemunerativo, .recibo .tapiz_recibo #titulo .columnaUnidad {
+      text-align: center; }
+  .recibo .tapiz_recibo #calculo {
+    grid-area: recibo; }
+    .recibo .tapiz_recibo #calculo .rowRecibo {
+      border-bottom: 1px solid #cccccc; }
+  .recibo .tapiz_recibo #sub_total {
+    grid-area: subtotal;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    border-bottom: 1px solid #0f012e;
+    text-transform: uppercase; }
+    .recibo .tapiz_recibo #sub_total .rowRecibo {
+      width: 100%; }
+      .recibo .tapiz_recibo #sub_total .rowRecibo #r_20_1 {
+        width: 70%;
+        text-align: end; }
+      .recibo .tapiz_recibo #sub_total .rowRecibo #r_20_3, .recibo .tapiz_recibo #sub_total .rowRecibo #r_20_4, .recibo .tapiz_recibo #sub_total .rowRecibo #r_20_5 {
+        width: 10%;
+        text-align: end; }
+  .recibo .tapiz_recibo #total {
+    grid-area: total;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    font-weight: 600;
+    border-bottom: 1px solid #0f012e;
+    text-transform: uppercase; }
+    .recibo .tapiz_recibo #total .rowRecibo {
+      width: 100%; }
+      .recibo .tapiz_recibo #total .rowRecibo #r_21_4 {
+        width: 90%;
+        text-align: end; }
+      .recibo .tapiz_recibo #total .rowRecibo #r_21_5 {
+        width: 10%;
+        text-align: end; }
+  .recibo .tapiz_recibo .rowRecibo {
+    display: flex; }
+    .recibo .tapiz_recibo .rowRecibo .columnaConcepto {
+      width: 50%;
+      padding-left: 1rem; }
+    .recibo .tapiz_recibo .rowRecibo .columnaUnidad {
+      width: 10%;
+      text-align: end;
+      padding-right: 1rem; }
+    .recibo .tapiz_recibo .rowRecibo .columnaBase {
+      width: 10%;
+      text-align: end;
+      padding-right: 1rem; }
+    .recibo .tapiz_recibo .rowRecibo .columnaRemunerativo {
+      width: 10%;
+      text-align: end;
+      padding-right: 1rem; }
+    .recibo .tapiz_recibo .rowRecibo .columnaNoRemunerativo {
+      width: 10%;
+      text-align: end;
+      padding-right: 1rem; }
+    .recibo .tapiz_recibo .rowRecibo .columnaDescuento {
+      width: 10%;
+      text-align: end;
+      padding-right: 1rem; }
+
 @media screen and (min-width: 768px) {
   .headderBlack {
     display: grid;
@@ -124,7 +242,10 @@ p {
       margin: 0 auto; }
     .headderBlack .contactInfo {
       width: 100%;
-      margin: 0 auto; } }
+      margin: 0 auto; }
+  .recibo {
+    width: 80%;
+    margin: 0 auto; } }
 
 @media screen and (min-width: 965px) {
   .headderBlack {
