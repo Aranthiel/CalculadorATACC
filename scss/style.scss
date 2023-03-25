@@ -35,7 +35,7 @@ html{
 body{
   font-size: 1.6rem;
   font-family: 'Didact Gothic', sans-serif;
-  background-color: var(--color-muted);
+  background-color: $color-muted;
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Cabin', 'Actor', sans-serif;
@@ -198,6 +198,7 @@ p{
         }
     }
     .tapiz_recibo{
+        background-color: $color-blanco;
         padding: 1.5rem 0;
         display: grid;
         grid-template-columns:50% 10% 10% 10% 10% 10%;
@@ -241,12 +242,11 @@ p{
                     width: 70%;
                     text-align: end;
                 }
-                #r_20_3, #r_20_4, #r_20_5,{
+                #r_20_3, #r_20_4, #r_20_5{
                     width: 10%;
                     text-align: end;
                 }
             }
-            
         }
         #total{
             grid-area: total;
