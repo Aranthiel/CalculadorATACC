@@ -14,7 +14,7 @@ window.addEventListener("load", function (){
     };
     
     function calcularHorasMensuales(jornadaSemanal){
-        let jornadaMensual=22*jornadaSemanal
+        let jornadaMensual=22*jornadaSemanal;
         console.log(`<<< horas mensuales: ${jornadaMensual} >>>`);
         return jornadaMensual;
     };
@@ -25,7 +25,7 @@ window.addEventListener("load", function (){
         let elegirCategoria = confirm(`El trabajador tiene categorìa "operaciones"?`);
         if (elegirCategoria){
             vCategoria.jornada = parseInt(prompt(`Ingresá la cantidad de horas semanales del trabajador`));
-            vCategoria.basicoCategoria = vBasico/36*vCategoria.jornada
+            vCategoria.basicoCategoria = vBasico/36*vCategoria.jornada;
             vCategoria.horasTotalesMes = calcularHorasMensuales(vCategoria.jornada);
             vCategoria.valorHora = calcularValorHora(vCategoria.basicoCategoria, vCategoria.horasTotalesMes);
             console.log(vCategoria);
@@ -34,7 +34,7 @@ window.addEventListener("load", function (){
         }
         else {
             vCategoria.jornada=48;            
-            vCategoria.basicoCategoria = vBasico
+            vCategoria.basicoCategoria = vBasico;
             vCategoria.horasTotalesMes = calcularHorasMensuales(vCategoria.jornada);
             vCategoria.valorHora = calcularValorHora(vCategoria.basicoCategoria, vCategoria.horasTotalesMes);
             console.log(vCategoria);
@@ -50,13 +50,13 @@ window.addEventListener("load", function (){
         console.log(`Basico: $${basico}`);
         basico=valoresCategoria(basico).basicoCategoria;
         console.log(`Basico: $${basico}`);
-        return basico
+        return basico;
     };
 
     function pedirAntiguedad(){
         let antiguedad = basico*parseInt(prompt(`Ingresá la antigüedad del trabajador`))/100;
         console.log(`Antigüedad: $${antiguedad}`);
-        return antiguedad
+        return antiguedad;
     };
 
     function pedirPresentismo(){
@@ -65,7 +65,7 @@ window.addEventListener("load", function (){
         if (cobraPresentismoPerfecto){
             presentismo=basico*0.1;
             console.log(`Presentismo: $${presentismo}`);
-            return presentismo
+            return presentismo;
         } else {
             let cobraPresentismo = confirm(`Las faltas fueron justificadas?`);
             if (cobraPresentismo){
@@ -85,7 +85,7 @@ window.addEventListener("load", function (){
         if (cobraPuntualidad){
             puntualidad=basico*0.005;
             console.log(`Puntualidad: $${puntualidad}`);
-            return puntualidad
+            return puntualidad;
         } else {
             console.log(`Puntualidad: $${puntualidad}`);
             return puntualidad;
@@ -130,42 +130,65 @@ window.addEventListener("load", function (){
     
 
     function calcularNetoRem(){
-        let sumaNetoRem=0
+        let sumaBrutoRem=0;
         let valorBasico=pedirBasico();
-        sumaNetoRem=sumaNetoRem+valorBasico;
-        console.log (`Subtotal: $${sumaNetoRem}`);
+        sumaBrutoRem=sumaBrutoRem+valorBasico;
+        console.log (`Subtotal neto: $${sumaBrutoRem}`);
         let valorAntiguedad= pedirAntiguedad();
-        sumaNetoRem=sumaNetoRem+valorAntiguedad;
-        console.log (`Subtotal: $${sumaNetoRem}`);
+        sumaBrutoRem=sumaBrutoRem+valorAntiguedad;
+        console.log (`Subtotal neto: $${sumaBrutoRem}`);
         let valorPresentismo = pedirPresentismo();
-        sumaNetoRem=sumaNetoRem+valorPresentismo;
-        console.log (`Subtotal: $${sumaNetoRem}`);
+        sumaBrutoRem=sumaBrutoRem+valorPresentismo;
+        console.log (`Subtotal neto: $${sumaBrutoRem}`);
         let valorPuntualidad= pedirPuntualidad();
-        sumaNetoRem=sumaNetoRem+valorPuntualidad;
-        console.log (`Subtotal: $${sumaNetoRem}`);
+        sumaBrutoRem=sumaBrutoRem+valorPuntualidad;
+        console.log (`Subtotal neto: $${sumaBrutoRem}`);
         let valorExtras50 = pedirExtrasAlCincuenta();
-        sumaNetoRem=sumaNetoRem+valorExtras50;
-        console.log (`Subtotal: $${sumaNetoRem}`);
+        sumaBrutoRem=sumaBrutoRem+valorExtras50;
+        console.log (`Subtotal neto: $${sumaBrutoRem}`);
         let valorExtras100=pedirExtrasAlCien();
-        sumaNetoRem=sumaNetoRem+valorExtras100;
-        console.log (`Total Neto Remunerativo: $${sumaNetoRem}`);
-        return sumaNetoRem;
+        sumaBrutoRem=sumaBrutoRem+valorExtras100;
+        console.log (`Total Neto Remunerativo: $${sumaBrutoRem}`);
+        return sumaBrutoRem;
 
     };
 
    /*  function calcularNetoNoRem(){
         //proximamente
     }; */
+    function calcularVariable(){
+        return 10;
+    }
 
-   /*  function calcularDescuentos(totalNetoRem){
-        //proximamente                  
-    }; */
+    function calcularDescuentos(totalBrutoRem){
+        let sumaDescuentos=0;
+        let jubilacion=totalBrutoRem*0.11;
+        console.log(`valor jubilacion: $${jubilacion}`);
+        sumaDescuentos+=jubilacion;
+        console.log (`Subtotal descuentos: $${sumaDescuentos}`);  
+        let leyINSSJP=totalBrutoRem*0.03;
+        console.log(`valor INSSJP: $${leyINSSJP}`);
+        sumaDescuentos+=leyINSSJP;
+        console.log (`Subtotal descuentos: $${sumaDescuentos}`);   
+        let obraSocial=totalBrutoRem*0.03;
+        console.log(`valor obra Social: $${obraSocial}`);
+        sumaDescuentos+=obraSocial;
+        console.log (`Subtotal descuentos: $${sumaDescuentos}`);  
+        let aporteSolidarioGremio=totalBrutoRem*0.025; //verificar valor con delegados   
+        console.log(`valor aporte Solidario Gremio: $${aporteSolidarioGremio}`);
+        sumaDescuentos+=aporteSolidarioGremio;
+        console.log (`Total descuentos: $${sumaDescuentos}`);     
+        return sumaDescuentos;           
+    }; 
 
     function calcularSueldo(){
-        //let netoRem= alcularNetoRem();
-        calcularNetoRem();
+        let brutoRem= calcularNetoRem();
         //calcularNetoNoRem(); proximamente
-        //calcularDescuentos(netoRem);
+        let descuentos = calcularDescuentos(brutoRem);
+        let haberesNetos = brutoRem - descuentos;
+        console.log (`Total de bolsillo: $${haberesNetos}`); 
+        alert(`Los haberes netos a depositar son ç: $${haberesNetos}`);
+        return haberesNetos;
     };
 
     calcularSueldo();
