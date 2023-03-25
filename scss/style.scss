@@ -1,0 +1,206 @@
+/* paleta de colores: https://coolors.co/91c06c-d6e8c8-5fa429-f4f9f0-0f0f0f*/
+$color-principal:#0093dd;
+$color-contraste: #c37c30;
+$color-muted:#cccccc;
+$color-texto: #1d1d1d;
+$color-claro:#d5ebf6;
+$color-blanco:#F4F9F0;
+$color-oscuro:#0f012e;
+$color-traslucido:#ffffff40;
+$color-principal-traslucido:#5FA42940;
+$color-contraste-traslucido:#91c06c40;
+$color-oscuro-traslucido:#00000040; 
+$color-claro-traslucido:#D6E8C840;
+
+$fuente-titulos:  'Cabin', 'Actor', sans-serif;
+$fuente-proyecto:  'Didact Gothic', sans-serif;
+
+$box-shadow-principal: 0.5rem 0.8rem 1.2rem $color-principal;
+$box-shadow-contraste: 0 0 0 2px $color-contraste-traslucido;
+$box-shadow-claro: 0 0 0 2px $color-claro-traslucido;
+$box-shadow-oscuro:  0 0 0 2px $color-oscuro-traslucido;
+
+*{
+  box-sizing: border-box; /* calcula automaticamente paRA QUE NO HAYA SCROLL HORIZONTAL*/
+  padding:0;
+  margin: 0;
+}
+
+html{
+  font-size: 65.5%;
+  /* esta linea indica que un REM es igual a 10px* lo que nos permite usar el rem como unidad de medida estandar para todo el proyecto */
+}
+/*AGREGAR ESTA PARTE Al inicio de  TODOS LOS ARCHIVOS CSS*/
+/* usar rem como unidad de edida para las dimensiones no spermite tener un mejor control del tamaño*/
+body{
+  font-size: 1.6rem;
+  font-family: 'Didact Gothic', sans-serif;
+  background-color: var(--color-muted);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cabin', 'Actor', sans-serif;
+  text-transform: uppercase;
+}
+a{
+    text-decoration: none;
+}
+h1 {
+  font-size: 4rem;
+}
+h4 {
+  font-size: 3rem;
+}
+p{
+  font-family: 'Didact Gothic', sans-serif;
+  font-size: 1.6rem;
+}
+
+.headderBlack{
+    width:100%;
+    margin-bottom: 1.5rem;
+    background-color: $color-oscuro;
+    color:$color-blanco;
+    display: grid;
+    grid-template-columns:1rem 1fr 1rem;
+    grid-template-rows: 1rem 9rem 5rem 9rem 5rem;
+    grid-template-areas: 
+    "margenA margenA margenA"
+    "logo logo logo "
+    "social social social"
+    "info info info"
+    "hamburguesa hamburguesa hamburguesa";
+    .logo{
+        grid-area: logo;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        a{
+            cursor: pointer;
+            display: flex;
+            justify-content: space-around;        
+            color: $color-principal;
+            align-items: center;
+            img{
+                height: 7rem;
+                margin-right: 0.75rem;
+            }
+            p{            
+            font-size: 5rem;
+            margin: 1rem auto;
+            margin-left: 0.75rem;
+            }
+        }
+        a:hover{
+            color:$color-blanco;
+        }
+    }
+    .socialLinks{    
+        grid-area: social;
+        display:flex;
+        height: 100%;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 0.5rem;
+        a{
+            cursor: pointer;
+            margin: 0.5rem auto;
+            color: $color-blanco;
+        }
+        a:hover{
+            color:$color-principal;
+        }
+    }
+    .contactInfo{
+        grid-area: info;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        font-size: 1.5rem;
+        text-align: center;
+        color: $color-blanco;    
+        flex-direction: column;
+        justify-content: center;
+        a{
+            cursor: pointer;
+            margin: 0.5rem 1.5rem;
+            color: $color-blanco;
+        }
+        a:hover{
+            color:$color-principal;
+        }
+        
+
+    }
+    .hamburguesa{
+        grid-area: hamburguesa;
+        display: flex;
+        height: 100%;
+        align-items: center; 
+        justify-content: center;  
+        font-size: 3rem;
+        color:$color-blanco;
+        background-color: $color-principal;
+    }
+}
+
+@media screen and (min-width:768px){
+    .headderBlack{
+        display: grid;
+        grid-template-columns: 25% 50% 25% ;
+        grid-template-rows: 1rem 9rem 5rem;
+        grid-template-areas:
+        "margenA margenA margenA" 
+        "logo info social"
+        "hamburguesa hamburguesa hamburguesa";
+        .logo{
+            width: 95%;           
+            justify-content: start;
+            margin-left: 1rem;
+            a{
+                img{
+                    width: 100%;
+                    margin:1rem;
+                }
+                p{  
+                    display:none;
+                }
+            }
+          }
+          .socialLinks{
+            width: 80%;            
+            align-items: center;
+            margin:0 auto;
+          }
+          .contactInfo{
+           width: 100%;
+           margin:0 auto;
+        }
+          
+    }
+}
+  
+@media screen and (min-width:965px){
+    .headderBlack{
+        grid-template-columns: 33% 34% 33%;
+        .logo{
+            a{
+                p{  
+                    display:block;
+                }
+            }
+          }
+          
+        }
+          
+}
+
+@media screen and (min-width:1365px){
+    .headderBlack{
+        grid-template-columns: 25% 50% 25% ;
+        .contactInfo{
+            flex-direction: row;                
+            align-items: center;
+        }
+    }
+}
