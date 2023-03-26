@@ -22,9 +22,9 @@ window.addEventListener("load", function (){
    
     function valoresCategoria(vBasico){        
         console.log(vCategoria);
-        let elegirCategoria = confirm(`El trabajador tiene categorìa "operaciones"?`);
+        let elegirCategoria = confirm(`Si el trabajador tiene categorìa "operaciones" elija aceptar`);
         if (elegirCategoria){
-            vCategoria.jornada = parseInt(prompt(`Ingresá la cantidad de horas semanales del trabajador`));
+            vCategoria.jornada = parseInt(prompt(`Ingrese la cantidad de horas semanales del trabajador\nEl valor debe ser entre 20 y 36hs`));
             vCategoria.basicoCategoria = vBasico/36*vCategoria.jornada;
             vCategoria.horasTotalesMes = calcularHorasMensuales(vCategoria.jornada);
             vCategoria.valorHora = calcularValorHora(vCategoria.basicoCategoria, vCategoria.horasTotalesMes);
@@ -46,7 +46,7 @@ window.addEventListener("load", function (){
         /* definir la base de cálculo - a futuro esto haria una consulta a paritarias.JSON usando los datos de Año, Mes, Categorìa
         si la categoria es "operaciones" return basico=basico/39*jornada
         else return basico */
-        basico = parseFloat(prompt(`Ingresá el sueldo básico sobre el cuál se debe hacer el cálculo de los haberes`));
+        basico = parseFloat(prompt(`Ingrese el sueldo básico mensual sobre el cuál se debe hacer el cálculo de los haberes`));
         console.log(`Basico: $${basico}`);
         basico=valoresCategoria(basico).basicoCategoria;
         console.log(`Basico: $${basico}`);
@@ -54,20 +54,20 @@ window.addEventListener("load", function (){
     };
 
     function pedirAntiguedad(){
-        let antiguedad = basico*parseInt(prompt(`Ingresá la antigüedad del trabajador`))/100;
+        let antiguedad = basico*parseInt(prompt(`Ingresá la antigüedad del trabajador en años\n`))/100;
         console.log(`Antigüedad: $${antiguedad}`);
         return antiguedad;
     };
 
     function pedirPresentismo(){
         let presentismo=0;
-        let cobraPresentismoPerfecto = confirm(`No tuvo faltas en el mes`);
+        let cobraPresentismoPerfecto = confirm(`Si no tuvo faltas en el mes elija aceptar`);
         if (cobraPresentismoPerfecto){
             presentismo=basico*0.1;
             console.log(`Presentismo: $${presentismo}`);
             return presentismo;
         } else {
-            let cobraPresentismo = confirm(`Las faltas fueron justificadas?`);
+            let cobraPresentismo = confirm(`Si todas las faltas fueron justificadas elija aceptar`);
             if (cobraPresentismo){
             presentismo=basico*0.06;
             console.log(`Presentismo: $${presentismo}`);
@@ -81,7 +81,7 @@ window.addEventListener("load", function (){
 
     function pedirPuntualidad(){
         let puntualidad=0;
-        let cobraPuntualidad = confirm(`No tuvo llegadas tarde en el mes`);
+        let cobraPuntualidad = confirm(`Si no tuvo llegadas tarde en el mes elija aceptar`);
         if (cobraPuntualidad){
             puntualidad=basico*0.005;
             console.log(`Puntualidad: $${puntualidad}`);
@@ -101,7 +101,7 @@ window.addEventListener("load", function (){
 
     function pedirExtrasAlCincuenta(){
         let valorExtras50=vCategoria.valorHora*1.5;    
-        let extras50=parseInt(prompt(`Ingresá la cantidad de horas extras al 50%.\n  Si no trabajó horas extras al 50% ingrese 0`));
+        let extras50=parseInt(prompt(`Ingrese la cantidad de horas extras al 50%.\n  Si no trabajó horas extras al 50% ingrese 0`));
         if (extras50!==0){           
             console.log(`<<<<< valor de la hora: $${vCategoria.valorHora} >>>`);
             console.log(`<<<<< valor de la hora Extras 50%: $${valorExtras50} >>>`);
@@ -116,7 +116,7 @@ window.addEventListener("load", function (){
     function pedirExtrasAlCien(){
         let valorExtras100=vCategoria.valorHora*2;
 
-        let extras100=parseInt(prompt(`Ingresá la cantidad de horas extras al 50%.\n  Si no trabajó horas extras al 50% ingrese 0`));
+        let extras100=parseInt(prompt(`Ingrese la cantidad de horas extras al 100%.\n  Si no trabajó horas extras al 100% ingrese 0`));
         if (extras100!==0){           
             console.log(`<<< valor de la hora: $${vCategoria.valorHora} >>>`);
             console.log(`<<< valor de la hora Extras 100%: $${valorExtras100} >>>`);
@@ -192,15 +192,5 @@ window.addEventListener("load", function (){
     };
 
     calcularSueldo();
-
-
     
-       
-        
-    
-
-
-        
-
-
 }) // fin del Load
