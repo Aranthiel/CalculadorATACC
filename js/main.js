@@ -59,11 +59,12 @@ window.addEventListener("load", function (){
         return antiguedad;
     };
 
-    function pedirPresentismo(){
+    function pedirPresentismo(basico, antiguedad, premios, extras50, extras100){
         let presentismo=0;
+        let baseCalculo=basico+antiguedad+premios+extras50+extras100;
         let cobraPresentismoPerfecto = confirm(`Si no tuvo faltas en el mes elija aceptar`);
         if (cobraPresentismoPerfecto){
-            presentismo=basico*0.1;
+            presentismo=baseCalculo*0.1;
             console.log(`Presentismo: $${presentismo}`);
             return presentismo;
         } else {
@@ -79,11 +80,12 @@ window.addEventListener("load", function (){
         }
     };
 
-    function pedirPuntualidad(){
+    function pedirPuntualidad(basico, antiguedad, premios, extras50, extras100){
         let puntualidad=0;
+        let baseCalculo=basico+antiguedad+premios+extras50+extras100;
         let cobraPuntualidad = confirm(`Si no tuvo llegadas tarde en el mes elija aceptar`);
         if (cobraPuntualidad){
-            puntualidad=basico*0.005;
+            puntualidad=baseCalculo*0.005;
             console.log(`Puntualidad: $${puntualidad}`);
             return puntualidad;
         } else {
@@ -128,37 +130,55 @@ window.addEventListener("load", function (){
         } 
     };
     
+    function pedirPremiosyComisiones(){
+        let premios=0;       
+        let cobraPremios = confirm(`Si el trabajador cobra premios o comisiones en este mes elija aceptar`);
+        if (cobraPremios){
+            premios =parseFloat(prompt(`Ingrese el importe neto en concepto de premios y comisiones para esta liquidación`));
+            console.log(`Premiosy comisiones: $${premios}`);
+            return premios;
+        } else {
+            console.log(`Premiosy comisiones: $${premios}`);
+            return premios;
+        }
+    };
+    
 
-    function calcularNetoRem(){
+    function calcularBrutoRem(){
         let sumaBrutoRem=0;
         let valorBasico=pedirBasico();
         sumaBrutoRem=sumaBrutoRem+valorBasico;
-        console.log (`Subtotal neto: $${sumaBrutoRem}`);
+        console.log (`Subtotal bruto: $${sumaBrutoRem}`);
         let valorAntiguedad= pedirAntiguedad();
         sumaBrutoRem=sumaBrutoRem+valorAntiguedad;
-        console.log (`Subtotal neto: $${sumaBrutoRem}`);
-        let valorPresentismo = pedirPresentismo();
-        sumaBrutoRem=sumaBrutoRem+valorPresentismo;
-        console.log (`Subtotal neto: $${sumaBrutoRem}`);
-        let valorPuntualidad= pedirPuntualidad();
-        sumaBrutoRem=sumaBrutoRem+valorPuntualidad;
-        console.log (`Subtotal neto: $${sumaBrutoRem}`);
+        console.log (`Subtotal bruto: $${sumaBrutoRem}`);
+        let valorPremios=pedirPremiosyComisiones();
+        sumaBrutoRem=sumaBrutoRem+valorPremios;
+        console.log (`Subtotal bruto: $${sumaBrutoRem}`);
+        
         let valorExtras50 = pedirExtrasAlCincuenta();
         sumaBrutoRem=sumaBrutoRem+valorExtras50;
-        console.log (`Subtotal neto: $${sumaBrutoRem}`);
+        console.log (`Subtotal bruto: $${sumaBrutoRem}`);
         let valorExtras100=pedirExtrasAlCien();
         sumaBrutoRem=sumaBrutoRem+valorExtras100;
-        console.log (`Total Neto Remunerativo: $${sumaBrutoRem}`);
+        console.log (`Subtotal bruto: $${sumaBrutoRem}`);
+
+        let valorPresentismo = pedirPresentismo(valorBasico, valorAntiguedad, valorPremios, valorExtras50, valorExtras100);// el presentismo se calcula sobre la suma de  Basico +  Antiguedad +  comisiones/premios + Hs extras  50% + Hs extras 100%
+        sumaBrutoRem=sumaBrutoRem+valorPresentismo;
+        console.log (`Subtotal bruto: $${sumaBrutoRem}`); 
+        let valorPuntualidad= pedirPuntualidad(valorBasico, valorAntiguedad, valorPremios, valorExtras50, valorExtras100); // la puntualidad  se calcula sobre la suma de  Basico +  Antiguedad +  comisiones/premios + Hs extras  50% + Hs extras 100%
+        sumaBrutoRem=sumaBrutoRem+valorPuntualidad;
+        
+        console.log (`Total bruto Remunerativo: $${sumaBrutoRem}`);
+        alert(`El total bruto es $${sumaBrutoRem}`);
         return sumaBrutoRem;
 
     };
 
-   /*  function calcularNetoNoRem(){
+   /*  function calcularBrutoNoRem(){
         //proximamente
     }; */
-    function calcularVariable(){
-        return 10;
-    }
+   
 
     function calcularDescuentos(totalBrutoRem){
         let sumaDescuentos=0;
@@ -177,17 +197,18 @@ window.addEventListener("load", function (){
         let aporteSolidarioGremio=totalBrutoRem*0.025; //verificar valor con delegados   
         console.log(`valor aporte Solidario Gremio: $${aporteSolidarioGremio}`);
         sumaDescuentos+=aporteSolidarioGremio;
-        console.log (`Total descuentos: $${sumaDescuentos}`);     
+        console.log (`Total descuentos: $${sumaDescuentos}`);  
+        alert(`El total de descuentos es $${sumaDescuentos}`);
         return sumaDescuentos;           
     }; 
 
     function calcularSueldo(){
-        let brutoRem= calcularNetoRem();
-        //calcularNetoNoRem(); proximamente
+        let brutoRem= calcularBrutoRem();
+        //calcularBrutoNoRem(); proximamente
         let descuentos = calcularDescuentos(brutoRem);
         let haberesNetos = brutoRem - descuentos;
         console.log (`Total de bolsillo: $${haberesNetos}`); 
-        alert(`Los haberes netos a depositar son ç: $${haberesNetos}`);
+        alert(`Los haberes netos a depositar son : $${haberesNetos}`);
         return haberesNetos;
     };
 
