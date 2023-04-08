@@ -52,7 +52,6 @@ h4 {
 }
 p{
   font-family: 'Didact Gothic', sans-serif;
-  font-size: 1.6rem;
 }
 
 .headderBlack{
@@ -201,7 +200,7 @@ p{
         background-color: $color-blanco;
         padding: 1.5rem 0;
         display: grid;
-        grid-template-columns:50% 10% 10% 10% 10% 10%;
+        grid-template-columns:30% 14% 14% 14% 14% 14%;
         grid-template-rows: auto auto auto auto;
         grid-template-areas: 
         "titulo titulo titulo titulo titulo titulo"
@@ -238,13 +237,15 @@ p{
             text-transform: uppercase;
             .rowRecibo{
                 width: 100%;
-                #r_20_1{
-                    width: 70%;
-                    text-align: end;
+                #r_21_1{
+                    width: 58%;
+                    text-align: end;                    
+                    padding-right: 1rem;
                 }
-                #r_20_3, #r_20_4, #r_20_5{
-                    width: 10%;
+                #r_21_3, #r_21_4, #r_21_5{
+                    width: 14%;
                     text-align: end;
+                    padding-right: 1rem;
                 }
             }
         }
@@ -258,13 +259,15 @@ p{
             text-transform: uppercase;
             .rowRecibo{
                 width: 100%;
-                #r_21_4{
-                    width: 90%;
-                    text-align: end;
+                #r_22_4{
+                    width: 86%;
+                    text-align: end;                    
+                    padding-right: 1rem;
                 }
-                #r_21_5{
-                    width: 10%;
+                #r_22_5{
+                    width: 14%;
                     text-align: end;
+                    padding-right: 1rem;
                 }
             }
             
@@ -274,37 +277,37 @@ p{
 
             .columnaConcepto{
                 // background-color:$color-contraste;
-                width: 50%;
+                width: 30%;
                 padding-left: 1rem;
                 
             }
             .columnaUnidad{
                 // background-color:$color-blanco;
-                width: 10%;
+                width: 14%;
                 text-align: end;
                 padding-right: 1rem;
             }
             .columnaBase{
                 // background-color:$color-contraste;
-                width: 10%;
+                width: 14%;
                 text-align: end;
                 padding-right: 1rem;
             }
             .columnaRemunerativo{
                 // background-color:$color-blanco;
-                width: 10%;
+                width: 14%;
                 text-align: end;
                 padding-right: 1rem;
             }
             .columnaNoRemunerativo{
                 // background-color:$color-contraste;
-                width: 10%;
+                width: 14%;
                 text-align: end;
                 padding-right: 1rem;
             }
             .columnaDescuento{
                 // background-color:$color-blanco;
-                width: 10%;
+                width: 14%;
                 text-align: end;
                 padding-right: 1rem;
             }
@@ -335,17 +338,16 @@ p{
                     display:none;
                 }
             }
-          }
-          .socialLinks{
+        }
+        .socialLinks{
             width: 80%;            
             align-items: center;
             margin:0 auto;
-          }
-          .contactInfo{
-           width: 100%;
-           margin:0 auto;
         }
-          
+        .contactInfo{
+            width: 100%;
+            margin:0 auto;
+        }
     }
     .recibo{
         width: 80%;
@@ -355,7 +357,6 @@ p{
         }
     }
 }
-  
 @media screen and (min-width:965px){
     .headderBlack{
         grid-template-columns: 33% 34% 33%;
@@ -365,10 +366,8 @@ p{
                     display:block;
                 }
             }
-          }
-          
         }
-          
+    }
 }
 
 @media screen and (min-width:1365px){

@@ -31,8 +31,7 @@ h4 {
   font-size: 3rem; }
 
 p {
-  font-family: 'Didact Gothic', sans-serif;
-  font-size: 1.6rem; }
+  font-family: 'Didact Gothic', sans-serif; }
 
 .headderBlack {
   width: 100%;
@@ -145,7 +144,7 @@ p {
   background-color: #F4F9F0;
   padding: 1.5rem 0;
   display: grid;
-  grid-template-columns: 50% 10% 10% 10% 10% 10%;
+  grid-template-columns: 30% 14% 14% 14% 14% 14%;
   grid-template-rows: auto auto auto auto;
   grid-template-areas: "titulo titulo titulo titulo titulo titulo" "recibo recibo recibo recibo recibo recibo" "subtotal subtotal subtotal subtotal subtotal subtotal" "total total total total total total";
   font-size: 1rem; }
@@ -174,12 +173,14 @@ p {
     text-transform: uppercase; }
     .recibo .tapiz_recibo #sub_total .rowRecibo {
       width: 100%; }
-      .recibo .tapiz_recibo #sub_total .rowRecibo #r_20_1 {
-        width: 70%;
-        text-align: end; }
-      .recibo .tapiz_recibo #sub_total .rowRecibo #r_20_3, .recibo .tapiz_recibo #sub_total .rowRecibo #r_20_4, .recibo .tapiz_recibo #sub_total .rowRecibo #r_20_5 {
-        width: 10%;
-        text-align: end; }
+      .recibo .tapiz_recibo #sub_total .rowRecibo #r_21_1 {
+        width: 58%;
+        text-align: end;
+        padding-right: 1rem; }
+      .recibo .tapiz_recibo #sub_total .rowRecibo #r_21_3, .recibo .tapiz_recibo #sub_total .rowRecibo #r_21_4, .recibo .tapiz_recibo #sub_total .rowRecibo #r_21_5 {
+        width: 14%;
+        text-align: end;
+        padding-right: 1rem; }
   .recibo .tapiz_recibo #total {
     grid-area: total;
     display: flex;
@@ -190,35 +191,37 @@ p {
     text-transform: uppercase; }
     .recibo .tapiz_recibo #total .rowRecibo {
       width: 100%; }
-      .recibo .tapiz_recibo #total .rowRecibo #r_21_4 {
-        width: 90%;
-        text-align: end; }
-      .recibo .tapiz_recibo #total .rowRecibo #r_21_5 {
-        width: 10%;
-        text-align: end; }
+      .recibo .tapiz_recibo #total .rowRecibo #r_22_4 {
+        width: 86%;
+        text-align: end;
+        padding-right: 1rem; }
+      .recibo .tapiz_recibo #total .rowRecibo #r_22_5 {
+        width: 14%;
+        text-align: end;
+        padding-right: 1rem; }
   .recibo .tapiz_recibo .rowRecibo {
     display: flex; }
     .recibo .tapiz_recibo .rowRecibo .columnaConcepto {
-      width: 50%;
+      width: 30%;
       padding-left: 1rem; }
     .recibo .tapiz_recibo .rowRecibo .columnaUnidad {
-      width: 10%;
+      width: 14%;
       text-align: end;
       padding-right: 1rem; }
     .recibo .tapiz_recibo .rowRecibo .columnaBase {
-      width: 10%;
+      width: 14%;
       text-align: end;
       padding-right: 1rem; }
     .recibo .tapiz_recibo .rowRecibo .columnaRemunerativo {
-      width: 10%;
+      width: 14%;
       text-align: end;
       padding-right: 1rem; }
     .recibo .tapiz_recibo .rowRecibo .columnaNoRemunerativo {
-      width: 10%;
+      width: 14%;
       text-align: end;
       padding-right: 1rem; }
     .recibo .tapiz_recibo .rowRecibo .columnaDescuento {
-      width: 10%;
+      width: 14%;
       text-align: end;
       padding-right: 1rem; }
 
