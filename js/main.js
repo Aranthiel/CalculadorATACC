@@ -16,13 +16,62 @@ window.addEventListener("load", function (){
         });
  */
 
+////////////////////////// clase, constructor, instancias y arrays //////////////////////////
+class Paritaria {
+    constructor(anio, mes, basicoMantenimiento, noRemunerativoMantenimiento, basicoAdministrativo, noRemunerativoAdministrativo, basicoOperaciones, noRemunerativoOperaciones){
+        this.anio=anio;
+        this.mes=mes;
+        this.basicoMantenimiento=basicoMantenimiento;
+        this.noRemunerativoMantenimiento=noRemunerativoMantenimiento;
+        this.basicoAdministrativo=basicoAdministrativo;
+        this.noRemunerativoAdministrativo=noRemunerativoAdministrativo;        
+        this.basicoOperaciones=basicoOperaciones;
+        this.noRemunerativoOperaciones=noRemunerativoOperaciones;
+    }
+};
+
+const octubre2020 = new Paritaria (2020, "Octubre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
+const noviembre2020 = new Paritaria (2020, "Noviembre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
+const diciembre2020 = new Paritaria (2020, "Diciembre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
+const y2020 =[octubre2020, noviembre2020, diciembre2020];
+
+const enero2021 = new Paritaria (2021, "Enero", 41669.63, 11045.43, 42159.86, 11163.43, 33335.7, 8418.43);
+const febrero2021 = new Paritaria (2021, "Febrero", 41669.63, 17084,86, 42159.86, 17303.86, 33335.7, 13272.86);
+const marzo2021 = new Paritaria (2021, "Marzo", 41669.63, 23127.29, 42159.86, 23444.29, 33335.7, 18127.29);
+const abril2021 = new Paritaria (2021, "Abril", 53970.25, 0, 54563.43, 0, 42998.7, 0);
+const mayo2021 = new Paritaria (2021, "Mayo", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+const junio2021 = new Paritaria (2021, "Junio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+const julio2021 = new Paritaria (2021, "Julio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+const agosto2021 = new Paritaria (2021, "Agosto", 56470.25, 8517.62, 57063.43, 8565.07, 44873.7, 7599.5);
+const septiembre2021 = new Paritaria (2021, "Septiembre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
+const octubre2021 = new Paritaria (2021, "Octubre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
+const noviembre2021 = new Paritaria (2021, "Noviembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
+const diciembre2021 = new Paritaria (2021, "Diciembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
+const y2021 =[enero2021, febrero2021, marzo2021, abril2021, mayo2021, junio2021, julio2021, agosto2021, septiembre2021, octubre2021, noviembre2021, diciembre2021]
+
+const enero2022 = new Paritaria (2022, "Enero", 70587.81, 4517.62, 71329.29, 4565.07, 56092.13, 3589.9);
+const febrero2022 = new Paritaria (2022, "Febrero", 70587.81, 10683.35, 71329.29, 10842.05, 56092.13, 3589.9);
+const marzo2022 = new Paritaria (2022, "Marzo", 70587.81, 16376.13, 71329.29, 16548.4, 56092.13, 7179.79);
+const abril2022 = new Paritaria (2022, "Abril", 86964.18, 5217.85, 87877.69, 5272.66, 69105.5, 4146.33);
+const mayo2022 = new Paritaria (2022, "Mayo", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+const junio2022 = new Paritaria (2022, "Junio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+const julio2022 = new Paritaria (2022, "Julio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+const agosto2022 = new Paritaria (2022, "Agosto", 56470.25, 8517.62, 57063.43, 8565.07, 44873.7, 7599.5);
+const septiembre2022 = new Paritaria (2022, "Septiembre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
+const octubre2022 = new Paritaria (2022, "Octubre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
+const noviembre2022 = new Paritaria (2022, "Noviembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
+const diciembre2022 = new Paritaria (2022, "Diciembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
+const y2022 =[enero2022, febrero2022, marzo2022, abril2022, mayo2022, junio2022, julio2022, agosto2022, septiembre2022, octubre2022, noviembre2022, diciembre2022]
+
+
+
 ///////////////////////////////////// DOM /////////////////////////////////////////////////////
 
 let years=[2020,2021,2022,2023];  // deberia mapear el Json
 let month2020=["Octubre", "Noviembre", "Diciembre"]; // deberia traer el JSON para el año 2020
 let month2021=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 let month2022=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-let month2023=["Enero", "Febrero", "Marzo", "Abril"]
+let month2023=["Enero", "Febrero", "Marzo", "Abril"];
 
 const selectAnio=document.querySelector("#anioSelect");
 const selectMes=document.querySelector("#mesSelect");
