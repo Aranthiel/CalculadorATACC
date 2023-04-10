@@ -20,7 +20,7 @@
     -->
 
     <!-- Hojas de estilo personalizadas -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/styleCopy.css">
     
 </head>
 <body>
@@ -68,6 +68,7 @@
                             <label for="categoriaSelect">Categoria: </label>
                             <select name="categoriaSelect" id="categoriaSelect">
                                 <!-- la idea es que las option se generen con un mapeo del JSON, de forma que solo sean opciones aquellos meses de ese año que tienen informacion en el JSON-->
+                                <option value="">Selecciona una categoría</option>
                                 <option value="01">Mantenimiento</option>
                                 <option value="02">Administrativo</option>
                                 <option value="03">Operaciones</option>  
@@ -75,7 +76,9 @@
                         </div>
                         <div class="columna2" id="jornada"> <!-- Solo se habilita si la categoría seleccionada es operaciones -->
                             <label for="jornadaSelect">Jornada: </label>
-                            <select name="jornadaSelect" name="jornadaSelect" id="jornadaSelect" placeholder="Hs semanales"> </select>
+                            <select name="jornadaSelect" name="jornadaSelect" id="jornadaSelect" disabled> 
+                                <option value="">Selecciona una jornada</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
@@ -83,7 +86,7 @@
                             <label for="anioSelect">Año: </label>
                             <select name="anioSelect" id="anioSelect">
                                 <!-- la idea es que las option se generen con un  mapeo del JSON, de forma que solo sean opciones aquellos años que tienen informacion en el JSON-->
-                                <option value="2019">2019</option>
+                                <option value="">Año a consultar</option>
                             </select>
                         </div>
                         <div class="columna2" id="mes">
@@ -95,21 +98,27 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="columna1" id="licencia">
-                            <label for="licenciaSelect">Ausencias: </label>
-                            <select name="licenciaSelect" id="licenciaSelect">
-                                <!-- motrar icono de ayuda que indicque cuando ul,a licencia es con goce y cuando es sin goce-->
-                                <option value="no">No</option>
-                                <option value="02">Con goce de sueldo</option>
-                                <option value="03">Sin goce de sueldo</option>  
-                                <option value="04">Suspención</option> 
-                            </select>
-                        </div>
-                        <div class="columna2" id="diasLicencia">
-                            <label for="diasLicenciaSelect">Dias ausente: </label>
-                            <select name="diasLicenciaSelect" id="diasLicenciaSelect" disabled>
-                                <!-- solo se habilita en caso de que haya habido ausencias en el mes -->
-                            </select>
+                        <div id="licencia">
+                            <div class="checkboxLicencias">
+                                <input type="checkbox" id="licenciaSelect" name="licenciaSelect" value="true">
+                                <label for="licenciaSelect"> Ausencias en el mes</label>
+                            </div>
+                            <div class="justificadasConGoce">
+                                <label for="diasLicenciaConGoceSelect">Justificadas c/goce: </label>
+                                <select name="diasLicenciaConGoceSelect" id="diasLicenciaConGoceSelect" disabled>
+                            </div>
+                            <div class="justificadasSinGoce">
+                                <label for="diasLicenciaSinGoceSelect">Justificadas s/goce: </label>
+                                <select name="diasLicenciaSinGoceSelect" id="diasLicenciaSinGoceSelect" disabled>
+                            </div>
+                            <div class="injustificadas">
+                                <label for="diasLicenciaInjustificadast">injustificadas: </label>
+                                <select name="diasLicenciaInjustificadast" id="diasLicenciaInjustificadast" disabled>
+                            </div>
+                            <div class="suspenciones">
+                                <label for="diasSuspencion">Suspenciones: </label>
+                                <select name="diasSuspencion" id="diasSuspencion" disabled>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -118,11 +127,8 @@
                             <select name="antiguedadSelect" id="antiguedadSelect"></select>
                         </div>
                         <div class="columna2" id="vacaciones"> <!-- calcula plus vacacional segun antiguedad -->
-                            <label for="vacacionesSelect">Vacaciones</label>
-                            <select name="vacacionesSelect" id="vacacionesSelect">
-                                <option value="00">no</option>
-                                <option value="01">si</option>
-                            </select>
+                            <input type="checkbox" id="vacacionesSelect" name="vacacionesSelect" value="true">
+                            <label for="vacacionesSelect"> Licencia por Vacaciones</label>
                         </div>
                     </div>
                     <div class="row">
@@ -620,6 +626,7 @@
                     </div>
                 </div>
 			</div>
+            
         </div>
     </main>
     <footer>
@@ -635,6 +642,6 @@
          -->
 
     <!-- Script Personalizado -->
-        <script src="./js/main.js"></script>    
+    <script src="./js/mainCopy.js"></script> 
 </body>
 </html>

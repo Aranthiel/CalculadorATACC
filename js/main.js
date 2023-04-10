@@ -53,19 +53,29 @@ const enero2022 = new Paritaria (2022, "Enero", 70587.81, 4517.62, 71329.29, 456
 const febrero2022 = new Paritaria (2022, "Febrero", 70587.81, 10683.35, 71329.29, 10842.05, 56092.13, 3589.9);
 const marzo2022 = new Paritaria (2022, "Marzo", 70587.81, 16376.13, 71329.29, 16548.4, 56092.13, 7179.79);
 const abril2022 = new Paritaria (2022, "Abril", 86964.18, 5217.85, 87877.69, 5272.66, 69105.5, 4146.33);
-const mayo2022 = new Paritaria (2022, "Mayo", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
-const junio2022 = new Paritaria (2022, "Junio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
-const julio2022 = new Paritaria (2022, "Julio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
-const agosto2022 = new Paritaria (2022, "Agosto", 56470.25, 8517.62, 57063.43, 8565.07, 44873.7, 7599.5);
-const septiembre2022 = new Paritaria (2022, "Septiembre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
-const octubre2022 = new Paritaria (2022, "Octubre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
-const noviembre2022 = new Paritaria (2022, "Noviembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
-const diciembre2022 = new Paritaria (2022, "Diciembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
+const mayo2022 = new Paritaria (2022, "Mayo", 86964.18, 10435.7, 87877.69, 10545.32, 69105.5, 8292.66);
+const junio2022 = new Paritaria (2022, "Junio", 86964.18, 15653.55, 87877.69, 15817.98, 69105.5, 12438.99);
+const julio2022 = new Paritaria (2022, "Julio", 86964.18, 15653.55, 87877.69, 15817.98, 69105.5, 12438.99);
+const agosto2022 = new Paritaria (2022, "Agosto",  86964.18, 33481.21, 87877.69, 33833.91, 69105.5, 26605.62);
+const septiembre2022 = new Paritaria (2022, "Septiembre",  86964.18, 42177.93, 87877.69, 42620.68, 69105.5, 33516.17);
+const octubre2022 = new Paritaria (2022, "Octubre",  86964.18, 42177.93, 87877.69, 42620.68, 69105.5, 33516.17);
+const noviembre2022 = new Paritaria (2022, "Noviembre",  86964.18, 51743.69, 87877.69, 52287.22, 69105.5, 41117.77);
+const diciembre2022 = new Paritaria (2022, "Diciembre",  86964.18, 51743.69, 87877.69, 52287.22, 69105.5, 41117.77);
 const y2022 =[enero2022, febrero2022, marzo2022, abril2022, mayo2022, junio2022, julio2022, agosto2022, septiembre2022, octubre2022, noviembre2022, diciembre2022]
 
-
+const enero2023 = new Paritaria (2023, "Enero", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
+const febrero2023 = new Paritaria (2023, "Febrero", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
+const marzo2023 = new Paritaria (2023, "Marzo", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
+const abril2023 = new Paritaria (2023, "Abril",172257.14, 0, 174066.6, 0, 136882.98, 0); 
+const mayo2023 = new Paritaria (2023, "Mayo",172257.14, 0, 174066.6, 0, 136882.98, 0 ); 
+const y2023=[enero2023, febrero2023, marzo2023, abril2023, mayo2023]
 
 ///////////////////////////////////// DOM /////////////////////////////////////////////////////
+
+let selectCategoria= document.querySelector("#categoriaSelect");
+selectCategoria.addEventListener('change', function() {
+    alert(this.value);
+  }, false);
 
 let years=[2020,2021,2022,2023];  // deberia mapear el Json
 let month2020=["Octubre", "Noviembre", "Diciembre"]; // deberia traer el JSON para el año 2020
@@ -87,6 +97,21 @@ function agregarOpcionSelect(opcion, selector){
 years.forEach(anio => agregarOpcionSelect(anio, selectAnio));
 month2023.forEach(mes => agregarOpcionSelect(mes, selectMes));
 
+// genera opciones para el select de jornada empezando por 20 y terminando en 48
+const selectJornada= document.querySelector("#jornadaSelect");
+for ( var i=20; i<=36; i++){
+    const option = document.createElement('option');    
+    option.value = i;
+    option.text = i;  
+    selectJornada.appendChild(option);  
+    /* if (i=48){
+        selectJornada.appendChild(option); //¿como le agrego el atributo selected?
+    }
+    else {
+        selectJornada.appendChild(option);
+    } */
+}
+
 const selectAntiguedad= document.querySelector("#antiguedadSelect");
 const SelectDiasLicencia = document.querySelector("#diasLicenciaSelect");
 const SelectExtras50 = document.querySelector("#hsExtra50Select");
@@ -100,6 +125,7 @@ function agregarOpcionSelectHasta(cantidad, selector){
         selector.appendChild(option);
     }
 }
+
 agregarOpcionSelectHasta((65-16), selectAntiguedad);
 agregarOpcionSelectHasta((31), SelectDiasLicencia);
 agregarOpcionSelectHasta((30), SelectExtras50);
@@ -325,10 +351,10 @@ agregarOpcionSelectHasta((30), SelectExtras100);
 
     };
 
-   /*  function calcularBrutoNoRem(){
-        r_21_4.innerHTML= `<p>${sumaNoRemunerativo}</p>`;
-    }; */
-   
+/*  function calcularBrutoNoRem(){
+    r_21_4.innerHTML= `<p>${sumaNoRemunerativo}</p>`;
+}; */
+
 
     function calcularDescuentos(totalBrutoRem){
         let sumaDescuentos=0;
