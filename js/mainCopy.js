@@ -72,7 +72,27 @@ const mayo2023 = new Paritaria (2023, "Mayo",172257.14, 0, 174066.6, 0, 136882.9
 const y2023=[enero2023, febrero2023, marzo2023, abril2023, mayo2023]
 
 ///////////////////////////////////// DOM /////////////////////////////////////////////////////
+/* const vCategoria = { // declara un objeto que contiene los valores de la categoria  necesarios para los calculos posteriores
+    categoriaElegida: "", // se completa con el selectCategoria.addEventListener linea 98
+    jornada:0, // se completa con el selectCategoria.addEventListener linea 98    
+    anioElegido: "",
+    mesElegido: "",
+    
+    basicoCategoria:0,
+    noRemunerativoCategoria:0,
+    horasTotalesMes:0, // se completa con el selectCategoria.addEventListener linea 98   
+    valorHora:0,
 
+    tuvoAusencias : false,
+    justConGoce :0,
+    justSinGoce :0,
+    injustificadas :0,
+    antiguedad :0,
+    cantidadExtras50: 0,    
+    cantidadExtras100: 0,
+    esAfiliadoATACC:false,
+    esAfiliadoConexo:false
+}; */
 
 const vCategoria = { // declara un objeto que contiene los valores de la categoria  necesarios para los calculos posteriores
     categoriaElegida: "", // se completa con el selectCategoria.addEventListener linea 98
@@ -196,11 +216,15 @@ function calcularValorHora(basico, horasMensuales){
     return  Number(valorHora.toFixed(2));
 };
 
+function obtenerValorBasico(){
+    
+}
+
+
 function calcularBasico (){
     //se cual es la categoria porque la tengo guardada en vCategoria.categoriaElegida
     let categoriaBuscada= vCategoria.categoriaElegida;
     console.log(`categoria buscada ${categoriaBuscada}`);
-    console.log(typeof(categoriaBuscada));
     let mesBuscado=vCategoria.mesElegido;
     console.log(`mes buscado ${mesBuscado}`);
     let anioBuscado=vCategoria.anioElegido;
@@ -255,6 +279,7 @@ const SelectExtras50 = document.querySelector("#hsExtra50Select");
 const SelectExtras100 = document.querySelector("#hsExtra100Select");
 
 const SelectAfiliadoATACC = document.querySelector("#afiliadoAtaccSelect"); //  deberia ser un booleano 
+const btnCalcular= document.querySelector("#btnCalcular")
 
 function agregarOpcionSelectHasta(cantidad, selector){
     for ( var i=0; i<=(cantidad); i++){
