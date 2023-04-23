@@ -3,9 +3,7 @@ window.addEventListener("load", function (){
     alert(`El proyecto cargó correctamente \nEste proyecto aun esta en desarrollo y no manipula el DOM\nPara ver como trabaja abrí la consola (F12)`);
 /* 
     fetch('../paritarias.json')
-
         .then(response => response.json())
-
         .then(datos => {
             console.log("fetch");
             console.log(datos.paritarias["2020"]["Diciembre"]["Categoría 2 Administrativo"]["no remunerativo"]) //5000
@@ -31,45 +29,47 @@ class Paritaria {
     }
 };
 
-const octubre2020 = new Paritaria (2020, "Octubre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
-const noviembre2020 = new Paritaria (2020, "Noviembre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
-const diciembre2020 = new Paritaria (2020, "Diciembre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
-const y2020 =[octubre2020, noviembre2020, diciembre2020];
+const paritariasArr = [];
 
-const enero2021 = new Paritaria (2021, "Enero", 41669.63, 11045.43, 42159.86, 11163.43, 33335.7, 8418.43);
-const febrero2021 = new Paritaria (2021, "Febrero", 41669.63, 17084,86, 42159.86, 17303.86, 33335.7, 13272.86);
-const marzo2021 = new Paritaria (2021, "Marzo", 41669.63, 23127.29, 42159.86, 23444.29, 33335.7, 18127.29);
-const abril2021 = new Paritaria (2021, "Abril", 53970.25, 0, 54563.43, 0, 42998.7, 0);
-const mayo2021 = new Paritaria (2021, "Mayo", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
-const junio2021 = new Paritaria (2021, "Junio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
-const julio2021 = new Paritaria (2021, "Julio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
-const agosto2021 = new Paritaria (2021, "Agosto", 56470.25, 8517.62, 57063.43, 8565.07, 44873.7, 7599.5);
-const septiembre2021 = new Paritaria (2021, "Septiembre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
-const octubre2021 = new Paritaria (2021, "Octubre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
-const noviembre2021 = new Paritaria (2021, "Noviembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
-const diciembre2021 = new Paritaria (2021, "Diciembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
-const y2021 =[enero2021, febrero2021, marzo2021, abril2021, mayo2021, junio2021, julio2021, agosto2021, septiembre2021, octubre2021, noviembre2021, diciembre2021]
+paritariasArr["octubre2020"] = new Paritaria (2020, "Octubre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
+paritariasArr["noviembre2020"] = new Paritaria (2020, "Noviembre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
+paritariasArr["diciembre2020"] = new Paritaria (2020, "Diciembre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
+const y2020 =[paritariasArr["octubre2020"], paritariasArr["noviembre2020"], paritariasArr["diciembre2020"]];
 
-const enero2022 = new Paritaria (2022, "Enero", 70587.81, 4517.62, 71329.29, 4565.07, 56092.13, 3589.9);
-const febrero2022 = new Paritaria (2022, "Febrero", 70587.81, 10683.35, 71329.29, 10842.05, 56092.13, 3589.9);
-const marzo2022 = new Paritaria (2022, "Marzo", 70587.81, 16376.13, 71329.29, 16548.4, 56092.13, 7179.79);
-const abril2022 = new Paritaria (2022, "Abril", 86964.18, 5217.85, 87877.69, 5272.66, 69105.5, 4146.33);
-const mayo2022 = new Paritaria (2022, "Mayo", 86964.18, 10435.7, 87877.69, 10545.32, 69105.5, 8292.66);
-const junio2022 = new Paritaria (2022, "Junio", 86964.18, 15653.55, 87877.69, 15817.98, 69105.5, 12438.99);
-const julio2022 = new Paritaria (2022, "Julio", 86964.18, 15653.55, 87877.69, 15817.98, 69105.5, 12438.99);
-const agosto2022 = new Paritaria (2022, "Agosto",  86964.18, 33481.21, 87877.69, 33833.91, 69105.5, 26605.62);
-const septiembre2022 = new Paritaria (2022, "Septiembre",  86964.18, 42177.93, 87877.69, 42620.68, 69105.5, 33516.17);
-const octubre2022 = new Paritaria (2022, "Octubre",  86964.18, 42177.93, 87877.69, 42620.68, 69105.5, 33516.17);
-const noviembre2022 = new Paritaria (2022, "Noviembre",  86964.18, 51743.69, 87877.69, 52287.22, 69105.5, 41117.77);
-const diciembre2022 = new Paritaria (2022, "Diciembre",  86964.18, 51743.69, 87877.69, 52287.22, 69105.5, 41117.77);
-const y2022 =[enero2022, febrero2022, marzo2022, abril2022, mayo2022, junio2022, julio2022, agosto2022, septiembre2022, octubre2022, noviembre2022, diciembre2022]
+paritariasArr["enero2021"] = new Paritaria (2021, "Enero", 41669.63, 11045.43, 42159.86, 11163.43, 33335.7, 8418.43);
+paritariasArr["febrero2021"] = new Paritaria (2021, "Febrero", 41669.63, 17084,86, 42159.86, 17303.86, 33335.7, 13272.86);
+paritariasArr["marzo2021"] = new Paritaria (2021, "Marzo", 41669.63, 23127.29, 42159.86, 23444.29, 33335.7, 18127.29);
+paritariasArr["abril2021"] = new Paritaria (2021, "Abril", 53970.25, 0, 54563.43, 0, 42998.7, 0);
+paritariasArr["mayo2021"] = new Paritaria (2021, "Mayo", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+paritariasArr["junio2021"] = new Paritaria (2021, "Junio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+paritariasArr["julio2021"] = new Paritaria (2021, "Julio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+paritariasArr["agosto2021"] = new Paritaria (2021, "Agosto", 56470.25, 8517.62, 57063.43, 8565.07, 44873.7, 7599.5);
+paritariasArr["septiembre2021"] = new Paritaria (2021, "Septiembre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
+paritariasArr["octubre2021"] = new Paritaria (2021, "Octubre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
+paritariasArr["noviembre2021"] = new Paritaria (2021, "Noviembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
+paritariasArr["diciembre2021"] = new Paritaria (2021, "Diciembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
+const y2021 =[paritariasArr["enero2021"], paritariasArr["febrero2021"], paritariasArr["marzo2021"], paritariasArr["abril2021"], paritariasArr["mayo2021"], paritariasArr["junio2021"], paritariasArr["julio2021"], paritariasArr["agosto2021"], paritariasArr["septiembre2021"], paritariasArr["octubre2021"], paritariasArr["noviembre2021"], paritariasArr["diciembre2021"]]
 
-const enero2023 = new Paritaria (2023, "Enero", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
-const febrero2023 = new Paritaria (2023, "Febrero", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
-const marzo2023 = new Paritaria (2023, "Marzo", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
-const abril2023 = new Paritaria (2023, "Abril",172257.14, 0, 174066.6, 0, 136882.98, 0); 
-const mayo2023 = new Paritaria (2023, "Mayo",172257.14, 0, 174066.6, 0, 136882.98, 0 ); 
-const y2023=[enero2023, febrero2023, marzo2023, abril2023, mayo2023]
+paritariasArr["enero2022"] = new Paritaria (2022, "Enero", 70587.81, 4517.62, 71329.29, 4565.07, 56092.13, 3589.9);
+paritariasArr["febrero2022"] = new Paritaria (2022, "Febrero", 70587.81, 10683.35, 71329.29, 10842.05, 56092.13, 3589.9);
+paritariasArr["marzo2022"] = new Paritaria (2022, "Marzo", 70587.81, 16376.13, 71329.29, 16548.4, 56092.13, 7179.79);
+paritariasArr["abril2022"] = new Paritaria (2022, "Abril", 86964.18, 5217.85, 87877.69, 5272.66, 69105.5, 4146.33);
+paritariasArr["mayo2022"] = new Paritaria (2022, "Mayo", 86964.18, 10435.7, 87877.69, 10545.32, 69105.5, 8292.66);
+paritariasArr["junio2022"] = new Paritaria (2022, "Junio", 86964.18, 15653.55, 87877.69, 15817.98, 69105.5, 12438.99);
+paritariasArr["julio2022"] = new Paritaria (2022, "Julio", 86964.18, 15653.55, 87877.69, 15817.98, 69105.5, 12438.99);
+paritariasArr["agosto2022"] = new Paritaria (2022, "Agosto",  86964.18, 33481.21, 87877.69, 33833.91, 69105.5, 26605.62);
+paritariasArr["septiembre2022"] = new Paritaria (2022, "Septiembre",  86964.18, 42177.93, 87877.69, 42620.68, 69105.5, 33516.17);
+paritariasArr["octubre2022"] = new Paritaria (2022, "Octubre",  86964.18, 42177.93, 87877.69, 42620.68, 69105.5, 33516.17);
+paritariasArr["noviembre2022"] = new Paritaria (2022, "Noviembre",  86964.18, 51743.69, 87877.69, 52287.22, 69105.5, 41117.77);
+paritariasArr["diciembre2022"] = new Paritaria (2022, "Diciembre",  86964.18, 51743.69, 87877.69, 52287.22, 69105.5, 41117.77);
+const y2022 =[paritariasArr["enero2022"], paritariasArr["febrero2022"], paritariasArr["marzo2022"], paritariasArr["abril2022"], paritariasArr["mayo2022"], paritariasArr["junio2022"], paritariasArr["julio2022"], paritariasArr["agosto2022"], paritariasArr["septiembre2022"], paritariasArr["octubre2022"], paritariasArr["noviembre2022"], paritariasArr["diciembre2022"]]
+
+paritariasArr["enero2023"] = new Paritaria (2023, "Enero", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
+paritariasArr["febrero2023"] = new Paritaria (2023, "Febrero", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
+paritariasArr["marzo2023"] = new Paritaria (2023, "Marzo", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
+paritariasArr["abril2023"] = new Paritaria (2023, "Abril",172257.14, 0, 174066.6, 0, 136882.98, 0); 
+paritariasArr["mayo2023"] = new Paritaria (2023, "Mayo",172257.14, 0, 174066.6, 0, 136882.98, 0 ); 
+const y2023=[paritariasArr["enero2023"], paritariasArr["febrero2023"], paritariasArr["marzo2023"], paritariasArr["abril2023"], paritariasArr["mayo2023"]]
 
 ///////////////////////////////////// DOM /////////////////////////////////////////////////////
 
@@ -188,6 +188,8 @@ selectMes.addEventListener('change', function() {
     vCategoria.mesElegido=this.value;
     console.log(vCategoria);
     console.log(` linea 183 mes elegido: ${vCategoria.mesElegido}`);
+    let mes_anio = vCategoria.mesElegido.toLowerCase() + vCategoria.anioElegido;
+    console.log(` Basico Administrativo para ${mes_anio} es: ${paritariasArr[mes_anio].basicoAdministrativo}`);
 });
 
 function calcularValorHora(basico, horasMensuales){
