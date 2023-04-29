@@ -76,18 +76,31 @@ const y2023=[paritariasArr["enero2023"], paritariasArr["febrero2023"], paritaria
 
 const vCategoria = { // declara un objeto que contiene los valores de la categoria  necesarios para los calculos posteriores
     categoriaElegida: "", // se completa con el selectCategoria.addEventListener linea 98
+    
+    jornada:0, // se completa con el selectCategoria.addEventListener linea 98    
     anioElegido: "",
-    mesElegido: "",
-    jornada:0, // se completa con el selectCategoria.addEventListener linea 98
-    anioElegido: "",
+    mesElegido: "",    
     basicoCategoria:0,
     noRemunerativoCategoria:0,
     horasTotalesMes:0, // se completa con el selectCategoria.addEventListener linea 98
-    anioElegido: "",
-    valorHora:0
+    valorHora:0,
+    tuvoAusencias: false,
+    ausenciasJustificadasConGoce:0,
+    ausenciasJustificadasSinGoce:0,
+    ausenciasInjustificadas:0,
+    suspenciones:0,
+    antiguedad:0,
+    licenciaVacaciones:false,
+    cantidadExtras50:0,
+    cantidadExtras100:0,
+    afiliadoATACC:false,
+    afiliadoCONEXO:false
+
 };
 console.log(vCategoria);
-function calcularHorasMensuales(jornadaSemanal){ // se calcula la cantidad de horas mensuales para poder calcular el valor de la hora. considera que el mes tien 4 semanas
+
+function calcularHorasMensuales(jornadaSemanal){ 
+    // se calcula la cantidad de horas mensuales para poder calcular el valor de la hora. considera que el mes tien 4 semanas
     let jornadaMensual=4*jornadaSemanal;
     console.log(`<<< horas mensuales: ${jornadaMensual} >>>`);
     r_1_1.innerHTML= `<p>${jornadaMensual}</p>`;
@@ -97,14 +110,38 @@ function calcularHorasMensuales(jornadaSemanal){ // se calcula la cantidad de ho
 const selectCategoria= document.querySelector("#categoriaSelect");
 const selectJornada= document.querySelector("#jornadaSelect");
 
+const selectAnio=document.querySelector("#anioSelect"); 
+const selectMes=document.querySelector("#mesSelect");
+
+const selectAusencias= document.querySelector("#checkboxLicencias");
+const selectTipoAusencias= document.querySelector("#tipoAusenciaSelect");
+
+const selectDiasLicenciaConGoce = document.querySelector("#diasLicenciaConGoceSelect");
+const selectDiasLicenciaSinGoce = document.querySelector("#diasLicenciaSinGoceSelect");
+
+const selectDiasLicenciaInjustificadas = document.querySelector("#diasLicenciaInjustificadasSelect");
+const selectDiasSuspencion = document.querySelector("#diasSuspencionSelect");
+
+const selectAntiguedad= document.querySelector("#antiguedadSelect"); 
+const selectVacaciones= document.querySelector("#checkboxVacaciones"); // ¿no funciona?
+
+const SelectExtras50 = document.querySelector("#hsExtra50Select");
+const SelectExtras100 = document.querySelector("#hsExtra100Select");
+
+const SelectAfiliadoATACC = document.querySelector("#checkboxAfiliadoAtacc");
+const SelectAfiliadoConexo = document.querySelector("#checkboxAfiliadoConexo");
+
+const btnCalcular = document.querySelector("#btnCalcular");
+
+
+
 selectCategoria.addEventListener('change', function() {
     console.log(`select categoría valor ${this.value}`);
     if (this.value != "03"){
         selectJornada.disabled=true;
-        vCategoria.categoriaElegida=this.value;
-        vCategoria.jornada=48;
-        vCategoria.horasTotalesMes = calcularHorasMensuales(vCategoria.jornada);
-        console.log(vCategoria);
+        // vCategoria.categoriaElegida=this.value;
+        vCategoria.jornada=48;        
+        //console.log(vCategoria);
     }
     else {
         for ( var i=36; i>=20; i--){ // ¿como hago para que se incremente en 0,5 en lugar de en 1?
@@ -114,11 +151,11 @@ selectCategoria.addEventListener('change', function() {
             selectJornada.appendChild(option);
         }
         selectJornada.disabled=false;
-        vCategoria.categoriaElegida=this.value;
+        //vCategoria.categoriaElegida=this.value;
         alert(`debes seleccionar la cantidad de horas semanales`);
         selectJornada.addEventListener('change', function() {            
             vCategoria.jornada = Number(selectJornada.value);
-            vCategoria.horasTotalesMes = calcularHorasMensuales(vCategoria.jornada);
+            
             console.log(vCategoria);
         });
     }
@@ -143,8 +180,8 @@ function limpiarOpcionesSelect(selector){
         }
 }
 
-const selectAnio=document.querySelector("#anioSelect"); 
-const selectMes=document.querySelector("#mesSelect");
+
+
 
 years.forEach(anio => agregarOpcionSelect(anio, selectAnio));
 
@@ -173,24 +210,13 @@ function elegirAnio(valor){
             console.log('default');           
     }
 }
-console.log(`linea 172 año elegido: ${vCategoria.anioElegido}`);
-selectAnio.addEventListener('change', function() {
-    console.log(`Elegiste el año ${this.value}`);   
+selectAnio.addEventListener('change', function() { 
     vCategoria.anioElegido=this.value;
-    console.log(vCategoria);
     limpiarOpcionesSelect(selectMes);
     (elegirAnio(vCategoria.anioElegido)).forEach(mes => agregarOpcionSelect(mes, selectMes));
-    console.log(` linea 179 año elegido: ${vCategoria.anioElegido}`);
 });
 
-selectMes.addEventListener('change', function() {
-    console.log(`Elegiste el mes ${this.value}`);   
-    vCategoria.mesElegido=this.value;
-    console.log(vCategoria);
-    console.log(` linea 183 mes elegido: ${vCategoria.mesElegido}`);
-    let mes_anio = vCategoria.mesElegido.toLowerCase() + vCategoria.anioElegido;
-    console.log(` Basico Administrativo para ${mes_anio} es: ${paritariasArr[mes_anio].basicoAdministrativo}`);
-});
+
 
 function calcularValorHora(basico, horasMensuales){
     let valorHora=basico/horasMensuales;
@@ -198,7 +224,54 @@ function calcularValorHora(basico, horasMensuales){
     return  Number(valorHora.toFixed(2));
 };
 
-function calcularBasico (){
+function buscarBasico(){
+    let mes_anio = vCategoria.mesElegido.toLowerCase() + vCategoria.anioElegido;    
+    
+    let categoria = vCategoria.categoriaElegida;
+    //return paritariasArr[mes_anio].basicoAdministrativo;
+    switch (categoria){
+        case "01":
+            vCategoria.basicoCategoria = paritariasArr[mes_anio].basicoMantenimiento;
+            vCategoria.noRemunerativoCategoria = paritariasArr[mes_anio].noRemunerativoMantenimiento;
+            break;
+
+        case "02":
+            vCategoria.basicoCategoria = paritariasArr[mes_anio].basicoAdministrativo;
+            vCategoria.noRemunerativoCategoria = paritariasArr[mes_anio].basicoAdministrativo;
+            break;
+        
+        case "03":
+            vCategoria.basicoCategoria = paritariasArr[mes_anio].basicoOperaciones;
+            vCategoria.noRemunerativoCategoria = paritariasArr[mes_anio].basicoOperaciones;
+            break;
+    }    
+}
+
+
+
+function completarValoresCategoria (){
+    vCategoria.categoriaElegida =  selectCategoria.value;   
+    vCategoria.anioElegido=selectAnio.value;
+    vCategoria.mesElegido=selectMes.value;    
+    vCategoria.horasTotalesMes = calcularHorasMensuales(vCategoria.jornada);   
+    vCategoria.valorHora = calcularValorHora(vCategoria.basicoCategoria, vCategoria.horasTotalesMes);
+    vCategoria.tuvoAusencias= selectAusencias.value;
+    vCategoria.ausenciasJustificadasConGoce = selectDiasLicenciaConGoce.value;
+    vCategoria.ausenciasJustificadasSinGoce= selectDiasLicenciaSinGoce.value;
+    vCategoria.ausenciasInjustificadas = selectDiasLicenciaInjustificadas.value;
+    vCategoria.suspenciones= selectDiasSuspencion.value;
+    vCategoria.antiguedad = selectAntiguedad.value;
+    vCategoria.licenciaVacaciones = selectVacaciones.value;
+    vCategoria.cantidadExtras50 = SelectExtras50.value;
+    vCategoria.cantidadExtras100 = SelectExtras100.value;
+    vCategoria.afiliadoATACC = SelectAfiliadoATACC.value;
+    vCategoria.afiliadoCONEXO = SelectAfiliadoConexo.value;
+    buscarBasico();
+    console.log(`vCategoria:`);
+    console.log(vCategoria);
+}
+
+function calcularSueldo (){
     //se cual es la categoria porque la tengo guardada en vCategoria.categoriaElegida
     let categoriaBuscada= vCategoria.categoriaElegida;
     console.log(`categoria buscada ${categoriaBuscada}`);
@@ -213,7 +286,6 @@ function calcularBasico (){
     console.log(marzo2022.anio);
     switch (categoriaBuscada){
         case "01" :
-            vCategoria.basicoCategoria = marzo2022.basicoMantenimiento;
             vCategoria.noRemunerativoCategoria=marzo2022.noRemunerativoMantenimiento;
             vCategoria.valorHora = calcularValorHora(vCategoria.basicoCategoria, vCategoria.horasTotalesMes);
             console.log(`elegiste la categoria Mantnimiento`);
@@ -240,23 +312,7 @@ function calcularBasico (){
 
 
 
-const selectAusencias= document.querySelector("#licenciaSelect");
-const selectDiasAusencias= document.querySelector("#diasLicenciaSelect"); //  deberia ser un booleano  y en caso de selccionar "si" deberia aparecer una fila con  opciones para elegir la cantidad de dias de licencia justificados con goce de sueldo, justificados sin goce de sueldo, injustificaods, suspenciones y ART.
 
-selectAusencias.addEventListener('change', function() { // no va a si, pero era para probar que funcionara calcularBasico()
-    calcularBasico();
-});
-
-
-
-const selectAntiguedad= document.querySelector("#antiguedadSelect"); //  deberia ser un calendario donde se eliga mes y año de ingreso y calcular automáticamente la antiguedad tomando la fecha actual
-const selectVacaciones= document.querySelector("#vacacionesSelect");//  deberia ser un booleano y calcular automaticamente la cantidad de dìas de licencia segun la antiguedad
-
-
-const SelectExtras50 = document.querySelector("#hsExtra50Select");
-const SelectExtras100 = document.querySelector("#hsExtra100Select");
-
-const SelectAfiliadoATACC = document.querySelector("#afiliadoAtaccSelect"); //  deberia ser un booleano 
 
 function agregarOpcionSelectHasta(cantidad, selector){
     for ( var i=0; i<=(cantidad); i++){
@@ -268,19 +324,20 @@ function agregarOpcionSelectHasta(cantidad, selector){
 }
 
 agregarOpcionSelectHasta((65-16), selectAntiguedad);
-//agregarOpcionSelectHasta((31), selectDiasAusencias);
+agregarOpcionSelectHasta((31), selectDiasLicenciaConGoce);
+agregarOpcionSelectHasta((31), selectDiasLicenciaSinGoce);
+agregarOpcionSelectHasta((31), selectDiasLicenciaInjustificadas);
+agregarOpcionSelectHasta((31), selectDiasSuspencion);
 agregarOpcionSelectHasta((30), SelectExtras50);
 agregarOpcionSelectHasta((30), SelectExtras100);
 
 
-// let opcionAnio revisa que opcion de año es la seleccionada
-//let mesesDisponibles = `month${opcionAnio}`  deberia dar como resultado una concatenacion "month2023"
-//mesesDisponibles.forEach(mes => agregarOpcionSelect(mes, selectMes));
 
-
-//////////////////////////////////////// FUNCIONES //////////////////////////////////////////////
-
-    //Leer información ingresada por el usuario (Año, Mes, Categoria, Jornada, Asistencia, Antiguedad, Hs extras, Afiliaciones)
+btnCalcular.addEventListener("click", (e)=>{
+    //evitamos el comportamiento por default del form
+    e.preventDefault();
+    completarValoresCategoria();
+});
 
 
 
