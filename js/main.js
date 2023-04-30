@@ -531,7 +531,7 @@ function calcularSueldo(){
 
 function usarLocalStorage(){
     const mensaje = `Haz realizado una consulta para los haberes de ${vCategoria.mesElegido} ${vCategoria.anioElegido} para un trabajador con ${vCategoria.antiguedad} años de antiguedad que tiene categoria ${vCategoria.categoriaElegida}`;
-    
+
     localStorage.setItem('mensaje', mensaje);
 
     const resumenConsulta = document.getElementById('resumenConsulta');
@@ -552,6 +552,13 @@ btnCalcular.addEventListener("click", (e)=>{
     calcularSueldo();
 });
 
+///////////////////// BORRAR LOCAL STORAGE AL CERRAR LA PAGINA By CHAT GTP /////////////////////
+
+function borrarMensajeLocalStorage() {
+    localStorage.removeItem('mensaje');
+}
+
+window.addEventListener('beforeunload', borrarMensajeLocalStorage);
 
 
 }) // fin del Load
