@@ -1,6 +1,7 @@
 "use strict"
+
 window.addEventListener("load", function (){
-    
+
 
 ////////////////////////// clase, constructor, instancias y arrays //////////////////////////
 
@@ -124,7 +125,17 @@ const selectVacaciones= document.querySelector("#checkboxVacaciones");
 selectVacaciones.addEventListener("change", function (){
     console.log(`Salio de vacaciones: ${selectVacaciones.checked}` );
     if (selectVacaciones.checked == true){
-        alert(`Esta opción aun no está habilitada`);
+        Swal.fire({   
+            titleText: "Esta opción aun no está habilitada",
+            html: "Pronto estará disponible para usuarios Premium",
+            icon: `warning`, 
+            iconColor: `#0093dd`,
+            width: `50rem`,
+            padding:` 1.5rem`,
+            color:`#F4F9F0`,
+            background:` #0f012e`,
+            confirmButtonColor: `#0093dd`,
+        });
     }
 });
 
@@ -170,14 +181,34 @@ const SelectAfiliadoATACC = document.querySelector("#checkboxAfiliadoAtacc");
 SelectAfiliadoATACC.addEventListener("change", function(){
     console.log(`Es afiliado a Conexo: ${SelectAfiliadoATACC.checked}` );
     if (SelectAfiliadoATACC.checked == true){
-        alert(`Esta opción aun no está habilitada`);
+        Swal.fire({   
+            titleText: "Esta opción aun no está habilitada",
+            html: "Pronto estará disponible para usuarios Premium",
+            icon: `warning`, 
+            iconColor: `#0093dd`,
+            width: `50rem`,
+            padding:` 1.5rem`,
+            color:`#F4F9F0`,
+            background:` #0f012e`,
+            confirmButtonColor: `#0093dd`,
+        });
     }
     });
 const SelectAfiliadoConexo = document.querySelector("#checkboxAfiliadoConexo");
 SelectAfiliadoConexo.addEventListener("change", function(){
     console.log(`Es afiliado a Conexo: ${SelectAfiliadoConexo.checked}` );
     if (SelectAfiliadoConexo.checked == true){
-        alert(`Esta opción aun no está habilitada`);
+        Swal.fire( {   
+            titleText: "Esta opción aun no está habilitada",
+            html: "Pronto estará disponible para usuarios Premium",
+            icon: `warning`, 
+            iconColor: `#0093dd`,
+            width: `50rem`,
+            padding:` 1.5rem`,
+            color:`#F4F9F0`,
+            background:` #0f012e`,
+            confirmButtonColor: `#0093dd`,
+        });
     }
     });
 
@@ -197,8 +228,21 @@ selectCategoria.addEventListener('change', function() {
             option.text = i;  
             selectJornada.appendChild(option);
         }
-        selectJornada.disabled=false;
-        alert(`debes seleccionar la cantidad de horas semanales`);
+        selectJornada.disabled=false;        
+        Swal.fire(/*`Seleccioná la jornada semanal`*/{
+            title: "titulo de la alerta",
+            titleText: "Seleccioná la jornada semanal",
+            html: "Podés elegir desde 20 a 36 hs semanales",
+            text:"text",
+            icon: `info`, 
+            iconColor: `#0093dd`,
+            width: `50rem`,
+            padding:` 1.5rem`,
+            color:`#F4F9F0`,
+            background:` #0f012e`,
+            confirmButtonColor: `#0093dd`,
+        });
+        // selectJornada.focus();
         selectJornada.addEventListener('change', function() {            
             vCategoria.jornada = Number(selectJornada.value);
         });
@@ -463,8 +507,12 @@ function calcularBrutoRem(){
 };
 
 function calcularNoRem(){
-    let noRemunerativo = vCategoria.noRemunerativoCategoria;
+    let noRemunerativo =(vCategoria.noRemunerativoCategoria);
+    console.log(`no rem 511:`);
+    console.log(typeof(noRemunerativo));
     r_8_4.innerHTML = `<p>${noRemunerativo.toFixed(2)}</p>`;
+    r_21_4.innerHTML = `<p>${noRemunerativo.toFixed(2)}</p>`;
+    return noRemunerativo;
 };
 
 function calcularDescuentos(totalBrutoRem){
@@ -518,10 +566,14 @@ function calcularDescuentos(totalBrutoRem){
 
 function calcularSueldo(){
     let brutoRem= calcularBrutoRem();
-    let noRem = calcularNoRem(); 
+    console.log(`brutoRem ${typeof(brutoRem)}`);
+    let noRem = Number(calcularNoRem()); 
+    console.log(`noRem ${typeof(noRem)}`);
     let descuentos = calcularDescuentos(brutoRem);
-    let haberesNetos = brutoRem + noRem - descuentos;
-    console.log (`Total de bolsillo: $${haberesNetos.toFixed(2)}`); 
+    console.log(`descuentos ${typeof(descuentos)}`);
+    let haberesNetos = brutoRem - descuentos + noRem ;
+    console.log (`Total de bolsillo: `); 
+    console.log (haberesNetos); 
     r_22_5.innerHTML= `<p>${haberesNetos.toFixed(2)}</p>`;    
     return haberesNetos;
 };

@@ -101,9 +101,6 @@ p {
     color: #F4F9F0;
     background-color: #0093dd; }
 
-#jornadaSelect {
-  width: 7rem; }
-
 .recibo form {
   background-color: #d5ebf6; }
   .recibo form #datos {
@@ -114,22 +111,26 @@ p {
     display: flex;
     flex-direction: column;
     padding: 1rem 0; }
-    .recibo form #datos .row {
+    .recibo form #datos .renglon {
       display: flex;
       width: 100%;
       font-size: 1.2rem;
       margin: 0.5rem auto;
       text-align: start; }
-      .recibo form #datos .row .columna1 {
+      .recibo form #datos .renglon .columna1 {
         width: 57%;
         margin-left: 1rem; }
-        .recibo form #datos .row .columna1 label {
+        .recibo form #datos .renglon .columna1 label {
           text-transform: uppercase; }
-      .recibo form #datos .row .columna2 {
+      .recibo form #datos .renglon .columna2 {
         width: 43%;
         margin-right: 1rem; }
-        .recibo form #datos .row .columna2 label {
+        .recibo form #datos .renglon .columna2 label {
           text-transform: uppercase; }
+    .recibo form #datos #jornadaSelect {
+      width: 7rem; }
+    .recibo form #datos #premiosImput {
+      width: 7rem; }
     .recibo form #datos #boton_calcular .boton_calcular_aceptar {
       background-color: #0f012e;
       color: #F4F9F0;
@@ -139,6 +140,12 @@ p {
       margin: 0.5rem auto;
       padding: 0.5rem;
       border-radius: 2rem; }
+
+.recibo #resumenConsulta {
+  min-height: 7rem;
+  background-color: #0f012e;
+  color: #F4F9F0;
+  padding: 1.5rem; }
 
 .recibo .tapiz_recibo {
   background-color: #F4F9F0;

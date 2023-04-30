@@ -141,9 +141,7 @@ p{
         background-color: $color-principal;
     }
 }
-#jornadaSelect{
-    width: 7rem;
-}
+
 
 .recibo{
     form{
@@ -156,7 +154,7 @@ p{
             display: flex;
             flex-direction: column;
             padding: 1rem 0;
-            .row{
+            .renglon{
                 display:flex;
                 width: 100%;
                 font-size: 1.2rem;
@@ -181,6 +179,13 @@ p{
                 }
 
             }
+            #jornadaSelect{
+                width: 7rem;
+            }
+            
+            #premiosImput{
+                width:  7rem;
+            }
             #boton_calcular{
                 .boton_calcular_aceptar{
                     background-color: $color-oscuro;
@@ -195,6 +200,12 @@ p{
 
             }
         }
+    }
+    #resumenConsulta{
+        min-height: 7rem;
+        background-color: $color-oscuro;
+        color:$color-blanco;
+        padding:1.5rem;
     }
     .tapiz_recibo{
         background-color: $color-blanco;
@@ -357,6 +368,7 @@ p{
         }
     }
 }
+
 @media screen and (min-width:965px){
     .headderBlack{
         grid-template-columns: 33% 34% 33%;
