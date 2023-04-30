@@ -103,6 +103,16 @@ console.log(`vCategoria:`);
 console.log(vCategoria);
 
 ///////////////////////////////////////////// DOM /////////////////////////////////////////////
+
+function toggleDisabled(flag, element){
+    if(!flag) {
+        element.setAttribute("disabled", "true");
+    } else {
+        element.removeAttribute("disabled");
+        element.focus();
+    }
+}
+
 const selectCategoria= document.querySelector("#categoriaSelect");
 const selectJornada= document.querySelector("#jornadaSelect");
 
@@ -110,20 +120,42 @@ const selectAnio=document.querySelector("#anioSelect");
 const selectMes=document.querySelector("#mesSelect");
 
 const selectAntiguedad= document.querySelector("#antiguedadSelect");
-const selectVacaciones= document.querySelector("#checkboxVacaciones"); // ¿Por qué no funciona?
-selectVacaciones.addEventListener("change", () => console.log(`Salio de vacaciones: ${selectVacaciones.checked}` ));
+const selectVacaciones= document.querySelector("#checkboxVacaciones"); 
+selectVacaciones.addEventListener("change", function (){
+    console.log(`Salio de vacaciones: ${selectVacaciones.checked}` );
+    if (selectVacaciones.checked == true){
+        alert(`Esta opción aun no está habilitada`);
+    }
+});
 
-const selectCobraPremios= document.querySelector("#checkboxCobraPremios"); // ¿Por qué no funciona?
-selectCobraPremios.addEventListener("change", () => console.log(`cobra premios: ${selectCobraPremios.checked}`));
 const imputPremio= document.querySelector("#premiosImput");
+//imputPremio.setAttribute("disabled", "true");
+const selectCobraPremios= document.querySelector("#checkboxCobraPremios"); 
+selectCobraPremios.addEventListener("change", function(){
+    console.log(`cobra premios: ${selectCobraPremios.checked}`)
+    let habilitarImput=selectCobraPremios.checked;
+    console.log(`habilitarImput`);
+    console.log(habilitarImput);
+    toggleDisabled(habilitarImput,imputPremio);
+});
 
+
+const selectTipoAusencias= document.querySelector("#tipoAusenciaSelect");
 const selectAusencias= document.querySelector("#checkboxLicencias");
-selectAusencias.addEventListener("change", () => console.log(`Tuvo ausencias: ${selectAusencias.checked}` ));
+selectAusencias.addEventListener("change", function(){
+    console.log(`Tuvo ausencias: ${selectAusencias.checked}`);
+    let habilitarImput=selectAusencias.checked;
+    console.log(`habilitarImput`);
+    console.log(habilitarImput);
+    toggleDisabled(habilitarImput,selectTipoAusencias);
+});
+
+
 const selectLlegadasTarde= document.querySelector("#checkboxLlegadaTarde");
 selectLlegadasTarde.addEventListener("change", () => console.log(`Tuvo llegadas tarde: ${selectLlegadasTarde.checked}` ));
 
 
-const selectTipoAusencias= document.querySelector("#tipoAusenciaSelect");
+
 
 const selectDiasLicenciaConGoce = document.querySelector("#diasLicenciaConGoceSelect");
 const selectDiasLicenciaSinGoce = document.querySelector("#diasLicenciaSinGoceSelect");
@@ -135,9 +167,19 @@ const SelectExtras50 = document.querySelector("#hsExtra50Select");
 const SelectExtras100 = document.querySelector("#hsExtra100Select");
 
 const SelectAfiliadoATACC = document.querySelector("#checkboxAfiliadoAtacc");
-SelectAfiliadoATACC.addEventListener("change", () => console.log(`Es afiliado a ATACC: ${SelectAfiliadoATACC.checked}` ));
+SelectAfiliadoATACC.addEventListener("change", function(){
+    console.log(`Es afiliado a Conexo: ${SelectAfiliadoATACC.checked}` );
+    if (SelectAfiliadoATACC.checked == true){
+        alert(`Esta opción aun no está habilitada`);
+    }
+    });
 const SelectAfiliadoConexo = document.querySelector("#checkboxAfiliadoConexo");
-SelectAfiliadoConexo.addEventListener("change", () => console.log(`Es afiliado a Conexo: ${SelectAfiliadoConexo.checked}` ));
+SelectAfiliadoConexo.addEventListener("change", function(){
+    console.log(`Es afiliado a Conexo: ${SelectAfiliadoConexo.checked}` );
+    if (SelectAfiliadoConexo.checked == true){
+        alert(`Esta opción aun no está habilitada`);
+    }
+    });
 
 const btnCalcular = document.querySelector("#btnCalcular");
 
@@ -232,7 +274,6 @@ selectAnio.addEventListener('change', function() {
     (elegirAnio(vCategoria.anioElegido)).forEach(mes => agregarOpcionSelect(mes, selectMes));
 });
 
-
 ////////////////////////////////////////// FUNCIONES //////////////////////////////////////////
 
 function calcularHorasMensuales(jornadaSemanal){ 
@@ -246,7 +287,6 @@ function calcularValorHora(basico, horasMensuales){
     console.log(`<<< Valor de la hora: $${valorHora.toFixed(2)} >>>`);
     return  Number(valorHora.toFixed(2));
 };
-
 
 function buscarBasico(){
     let mes_anio = vCategoria.mesElegido.toLowerCase() + vCategoria.anioElegido;    
@@ -422,6 +462,11 @@ function calcularBrutoRem(){
 
 };
 
+function calcularNoRem(){
+    let noRemunerativo = vCategoria.noRemunerativoCategoria;
+    r_8_4.innerHTML = `<p>${noRemunerativo.toFixed(2)}</p>`;
+};
+
 function calcularDescuentos(totalBrutoRem){
     let sumaDescuentos=0;
     let jubilacion=totalBrutoRem*0.11;
@@ -473,9 +518,9 @@ function calcularDescuentos(totalBrutoRem){
 
 function calcularSueldo(){
     let brutoRem= calcularBrutoRem();
-    //calcularBrutoNoRem(); proximamente
+    let noRem = calcularNoRem(); 
     let descuentos = calcularDescuentos(brutoRem);
-    let haberesNetos = brutoRem - descuentos;
+    let haberesNetos = brutoRem + noRem - descuentos;
     console.log (`Total de bolsillo: $${haberesNetos.toFixed(2)}`); 
     r_22_5.innerHTML= `<p>${haberesNetos.toFixed(2)}</p>`;    
     return haberesNetos;

@@ -116,9 +116,9 @@
                             <label for="checkboxCobraPremios"> Cobra premios </label>
                             <input type="checkbox" id="checkboxCobraPremios" name="checkboxCobraPremios">
                         </div>
-                        <div class="columna2" >
+                        <div class="columna2 " >
                             <label for="premiosImput">Premio Bruto $: </label> <!--  reemplazar por fecha de ingreso y calcuylar antiguedad con JS-->
-                            <input type="number" value="0" id="premiosImput" name="premiosImput" style="width: 100px;">
+                            <input disabled type="number" value="0" id="premiosImput" name="premiosImput" style="width: 100px;" >
                         </div>
                         
                         
@@ -139,7 +139,7 @@
                     <div class="row" id="justificadas">
                         <div class="columna1" id="tipoAusencia">
                             <label for="tipoAusenciaSelect">Tipo de ausencias</label>
-                            <select name="tipoAusenciaSelect" id="tipoAusenciaSelect">
+                            <select name="tipoAusenciaSelect" id="tipoAusenciaSelect" disabled>
                                 <option value="">Selecciona</option>
                                 <option value="J">Justificadas</option>
                                 <option value="I">Injustificadas</option>
@@ -399,7 +399,7 @@
                                 
                             </div>
                         </div>
-                        <div  class="rowRecibo"id="linea_9">
+                        <div  class="rowRecibo"id="linea_9" style="display: none;">
                             <div class="columnaConcepto" id="descripcion_9">
                             Antiguedad (NR)
                             </div>
@@ -420,7 +420,7 @@
                             </div>
                         </div>
                         
-                        <div  class="rowRecibo"id="linea_10">
+                        <div  class="rowRecibo"id="linea_10" style="display: none;">
                             <div class="columnaConcepto" id="descripcion_10">
                             Asistencia (NR)            	
                             </div>
@@ -440,7 +440,7 @@
                                 
                             </div>
                         </div>
-                        <div  class="rowRecibo"id="linea_11">
+                        <div  class="rowRecibo"id="linea_11" style="display: none;">
                             <div class="columnaConcepto" id="descripcion_11"> 
                                 Puntualidad (NR)
                             </div>
@@ -460,7 +460,7 @@
                                 
                             </div>
                         </div>
-                        <div class="rowRecibo" id="linea_12">
+                        <div class="rowRecibo" id="linea_12" style="display: none;">
                             <div class="columnaConcepto" id="descripcion_12">
                             Horas Extras al 50% (NR)
                             </div>
@@ -480,7 +480,7 @@
                                 
                             </div>
                         </div>
-                        <div  class="rowRecibo"id="linea_13">
+                        <div  class="rowRecibo"id="linea_13" style="display: none;">
                             <div class="columnaConcepto" id="descripcion_13">
                             Horas Extras al 100% (NR)
                             </div>
