@@ -527,9 +527,11 @@ function calcularSueldo(){
 };
 
 //////////////////////////////////////// LOCAL STORAGE ////////////////////////////////////////
-const mensaje = `Haz realizado una consulta para los haberes de ${vCategoria.mesElegido} ${vCategoria.anioElegido} para un trabajador con ${vCategoria.antiguedad} años de antiguedad que tiene categoria ${vCategoria.categoriaElegida}`;
+
 
 function usarLocalStorage(){
+    const mensaje = `Haz realizado una consulta para los haberes de ${vCategoria.mesElegido} ${vCategoria.anioElegido} para un trabajador con ${vCategoria.antiguedad} años de antiguedad que tiene categoria ${vCategoria.categoriaElegida}`;
+    
     localStorage.setItem('mensaje', mensaje);
 
     const resumenConsulta = document.getElementById('resumenConsulta');
