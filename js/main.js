@@ -526,10 +526,27 @@ function calcularSueldo(){
     return haberesNetos;
 };
 
+//////////////////////////////////////// LOCAL STORAGE ////////////////////////////////////////
+const mensaje = `Haz realizado una consulta para los haberes de ${vCategoria.mesElegido} ${vCategoria.anioElegido} para un trabajador con ${vCategoria.antiguedad} años de antiguedad que tiene categoria ${vCategoria.categoriaElegida}`;
+
+function usarLocalStorage(){
+    localStorage.setItem('mensaje', mensaje);
+
+    const resumenConsulta = document.getElementById('resumenConsulta');
+    const mensajeGuardado = localStorage.getItem('mensaje');
+
+    if (mensajeGuardado !== null) {
+        resumenConsulta.innerHTML = mensajeGuardado;
+    }
+}
+
+///////////////////////////////////// NO SÉ QUÉ PONER ACÁ /////////////////////////////////////
+
 btnCalcular.addEventListener("click", (e)=>{
     //evitamos el comportamiento por default del form
     e.preventDefault();
     completarValoresCategoria();
+    usarLocalStorage();
     calcularSueldo();
 });
 
