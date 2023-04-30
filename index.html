@@ -63,11 +63,12 @@
         <div class="recibo">
             <form action="" method="" name=""> 
                 <div id="datos">
-                    <div class="row">
+                    <div class="row" id="categoria">
                         <div class="columna1" id="categoria">
                             <label for="categoriaSelect">Categoria: </label>
                             <select name="categoriaSelect" id="categoriaSelect">
                                 <!-- la idea es que las option se generen con un mapeo del JSON, de forma que solo sean opciones aquellos meses de ese año que tienen informacion en el JSON-->
+                                <option value="">Selecciona una categoría</option>
                                 <option value="01">Mantenimiento</option>
                                 <option value="02">Administrativo</option>
                                 <option value="03">Operaciones</option>  
@@ -75,15 +76,18 @@
                         </div>
                         <div class="columna2" id="jornada"> <!-- Solo se habilita si la categoría seleccionada es operaciones -->
                             <label for="jornadaSelect">Jornada: </label>
-                            <select name="jornadaSelect" name="jornadaSelect" id="jornadaSelect" placeholder="Hs semanales"> </select>
+                            <select name="jornadaSelect" name="jornadaSelect" id="jornadaSelect" disabled> 
+                                <option value="">Selecciona una jornada</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="row">
+
+                    <div class="row" id="mesyanio">
                         <div class="columna1" id="anio">
                             <label for="anioSelect">Año: </label>
                             <select name="anioSelect" id="anioSelect">
                                 <!-- la idea es que las option se generen con un  mapeo del JSON, de forma que solo sean opciones aquellos años que tienen informacion en el JSON-->
-                                <option value="2019">2019</option>
+                                <option value="">Año a consultar</option>
                             </select>
                         </div>
                         <div class="columna2" id="mes">
@@ -94,38 +98,96 @@
                             </select>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="columna1" id="licencia">
-                            <label for="licenciaSelect">Ausencias: </label>
-                            <select name="licenciaSelect" id="licenciaSelect">
-                                <!-- motrar icono de ayuda que indicque cuando ul,a licencia es con goce y cuando es sin goce-->
-                                <option value="no">No</option>
-                                <option value="02">Con goce de sueldo</option>
-                                <option value="03">Sin goce de sueldo</option>  
-                                <option value="04">Suspención</option> 
-                            </select>
-                        </div>
-                        <div class="columna2" id="diasLicencia">
-                            <label for="diasLicenciaSelect">Dias ausente: </label>
-                            <select name="diasLicenciaSelect" id="diasLicenciaSelect" disabled>
-                                <!-- solo se habilita en caso de que haya habido ausencias en el mes -->
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="columna1" id="antiguedad">
+
+                    <div class="row" id="antiguedad">
+                        <div class="columna1" >
                             <label for="antiguedadSelect">Antigüedad: </label> <!--  reemplazar por fecha de ingreso y calcuylar antiguedad con JS-->
                             <select name="antiguedadSelect" id="antiguedadSelect"></select>
                         </div>
-                        <div class="columna2" id="vacaciones"> <!-- calcula plus vacacional segun antiguedad -->
-                            <label for="vacacionesSelect">Vacaciones</label>
-                            <select name="vacacionesSelect" id="vacacionesSelect">
-                                <option value="00">no</option>
-                                <option value="01">si</option>
+                        <div class="columna2" id="Vacaciones"> <!-- calcula plus vacacional segun antiguedad -->
+                            <label for="checkboxVacaciones"> Licencia por Vacaciones</label>
+                            <input type="checkbox" id="checkboxVacaciones" name="checkboxVacaciones">
+                        </div>
+                        
+                    </div>
+
+                    <div class="row" id="premios">
+                        <div class="columna1" id="cobraPremios"> <!-- calcula plus vacacional segun antiguedad -->
+                            <label for="checkboxCobraPremios"> Cobra premios </label>
+                            <input type="checkbox" id="checkboxCobraPremios" name="checkboxCobraPremios">
+                        </div>
+                        <div class="columna2" >
+                            <label for="premiosImput">Premio Bruto $: </label> <!--  reemplazar por fecha de ingreso y calcuylar antiguedad con JS-->
+                            <input type="number" value="0" id="premiosImput" name="premiosImput" style="width: 100px;">
+                        </div>
+                        
+                        
+                    </div>
+
+                    
+                    <div class="row" id="consultarAusencias">
+                        <div class="columna1">
+                            <label for="checkboxLicencias"> Tuvo ausencias en el mes</label>
+                            <input type="checkbox" id="checkboxLicencias" name="checkboxLicencias">                                
+                        </div>
+                        <div class="columna2" >
+                            <label for="checkboxLlegadaTarde"> Tuvo llegadas tarde </label>
+                            <input type="checkbox" id="checkboxLlegadaTarde" name="checkboxLlegadaTarde"> 
+                        </div>
+                    </div>
+
+                    <div class="row" id="justificadas">
+                        <div class="columna1" id="tipoAusencia">
+                            <label for="tipoAusenciaSelect">Tipo de ausencias</label>
+                            <select name="tipoAusenciaSelect" id="tipoAusenciaSelect">
+                                <option value="">Selecciona</option>
+                                <option value="J">Justificadas</option>
+                                <option value="I">Injustificadas</option>
+                                <option value="A">Ambas</option>
+                            </select>
+                        </div>
+                        <div class="columna2" >
+                            <label for="diasLicenciaConGoceSelect">Justificadas c/goce: </label>
+                            <select name="diasLicenciaConGoceSelect" id="diasLicenciaConGoceSelect" disabled>
+                                <option value="">Selecciona</option>
                             </select>
                         </div>
                     </div>
-                    <div class="row">
+
+                    <div class="row" id="justificadas">
+                        <div class="columna1" >
+                            <label for="diasLicenciaSinGoceSelect">Justificadas s/goce: </label>
+                            <select name="diasLicenciaSinGoceSelect" id="diasLicenciaSinGoceSelect" disabled>
+                                <option value="">Selecciona</option>
+                            </select>                     
+                        </div>
+                        <div class="columna2" >
+                            <label for="diasLicenciaARTSelect">Días por ART: </label>
+                            <select name="diasLicenciaARTSelect" id="diasLicenciaARTSelect" disabled>
+                                <option value="">Selecciona</option>
+                            </select> 
+                            
+                        </div>
+                    </div>
+
+                    <div class="row" id="injustificadas">
+                        <div class="columna1" >
+                            <label for="diasLicenciaInjustificadasSelect">injustificadas: </label>
+                            <select name="diasLicenciaInjustificadasSelect" id="diasLicenciaInjustificadasSelect" disabled>
+                                <option value="">Selecciona</option>
+                            </select>                       
+                        </div>
+                        <div class="columna2" >
+                            <label for="diasSuspencionSelect">Suspenciones: </label>
+                            <select name="diasSuspencionSelect" id="diasSuspencionSelect"  disabled >
+                                <option value="">Selecciona</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    
+
+                    <div class="row" id="extras">
                         <div class="columna1" id="hsExtra50"><!--  Según la legislación vigente, la realización de horas extras se encuentra limitada a un máximo de 3 horas diarias, 30 horas mensuales o 200 horas anuales (Decretos 16.115/1933 y 484/2000).-->
                             <label for="hsExtra50Select">Horas Extras 50%: </label> 
                             <select name="hsExtra50Select" id="hsExtra50Select"></select>
@@ -135,24 +197,20 @@
                             <select name="hsExtra100Select" id="hsExtra100Select"></select>
                         </div>
                     </div>
+
                     <div class="row">
                         <div class="columna1" id="afiliadoAtacc">
-                            <label for="afiliadoAtaccSelect">Afiliado ATACC: </label>
-                            <select name="afiliadoAtaccSelect" id="afiliadoAtaccSelect">
-                                <option value="01">si</option>
-                                <option value="02">no</option>
-                            </select>
+                            <label for="checkboxAfiliadoAtacc">Afiliado ATACC: </label>
+                            <input type="checkbox" id="checkboxAfiliadoAtacc" name="checkboxAfiliadoAtacc" > 
                         </div>
                         <div class="columna2" id="afiliadoConexo">
-                            <label for="afiliadoConexoSelect">Afiliado Conexo: </label>
-                            <select name="afiliadoConexoSelect" id="afiliadoConexoSelect">
-                                <option value="01">si</option>
-                                <option value="02">no</option>
-                            </select>
+                            <label for="checkboxAfiliadoConexo">Afiliado Conexo: </label>
+                            <input type="checkbox" id="checkboxAfiliadoConexo" name="checkboxAfiliadoConexo" > 
                         </div>
                     </div>
-                    <div id="boton_calcular">
-                        <button class="boton_calcular_aceptar">Calcular</button>
+
+                    <div id="boton_calcular" >
+                        <button class="boton_calcular_aceptar" id="btnCalcular">Calcular</button>
                     </div>
                 </div>
             </form>	
@@ -221,7 +279,7 @@
                         </div>
                         <div  class="rowRecibo"id="linea_3">
                             <div class="columnaConcepto" id="descripcion_3">
-                            Presentismo
+                            Premios y comisiones
                             </div>
                             <div class="columnaUnidad" id="r_3_1">
                                 
@@ -241,7 +299,7 @@
                         </div>
                         <div  class="rowRecibo"id="linea_4">
                             <div class="columnaConcepto" id="descripcion_4">
-                            Puntualidad
+                            Hs Extras 50%
                             </div>
                             <div class="columnaUnidad" id="r_4_1">
                                 
@@ -261,7 +319,7 @@
                         </div>
                         <div  class="rowRecibo"id="linea_5">
                             <div class="columnaConcepto" id="descripcion_5">
-                            Horas Extras al 50%
+                            Horas Extras al 100%
                             </div>
                             <div class="columnaUnidad" id="r_5_1">
                                 
@@ -281,7 +339,7 @@
                         </div>
                         <div  class="rowRecibo"id="linea_6">
                             <div class="columnaConcepto" id="descripcion_6">
-                            Horas Extras al 100%
+                            Presentismo
                             </div>
                             <div class="columnaUnidad" id="r_6_1">
                                 
@@ -301,7 +359,7 @@
                         </div>
                         <div  class="rowRecibo"id="linea_7">
                             <div class="columnaConcepto" id="descripcion_7">
-                            Premios y Comisiones
+                            Puntualidad
                             </div>
                             <div class="columnaUnidad" id="r_7_1">
                                 
@@ -620,6 +678,7 @@
                     </div>
                 </div>
 			</div>
+            
         </div>
     </main>
     <footer>
@@ -635,6 +694,6 @@
          -->
 
     <!-- Script Personalizado -->
-        <script src="./js/main.js"></script>    
+    <script src="./js/main.js"></script> 
 </body>
 </html>

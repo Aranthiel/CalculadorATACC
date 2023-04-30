@@ -20,7 +20,7 @@
     -->
 
     <!-- Hojas de estilo personalizadas -->
-    <link rel="stylesheet" href="./css/styleCopy.css">
+    <link rel="stylesheet" href="./css/style.css">
     
 </head>
 <body>
@@ -68,7 +68,6 @@
                             <label for="categoriaSelect">Categoria: </label>
                             <select name="categoriaSelect" id="categoriaSelect">
                                 <!-- la idea es que las option se generen con un mapeo del JSON, de forma que solo sean opciones aquellos meses de ese año que tienen informacion en el JSON-->
-                                <option value="">Selecciona una categoría</option>
                                 <option value="01">Mantenimiento</option>
                                 <option value="02">Administrativo</option>
                                 <option value="03">Operaciones</option>  
@@ -76,18 +75,15 @@
                         </div>
                         <div class="columna2" id="jornada"> <!-- Solo se habilita si la categoría seleccionada es operaciones -->
                             <label for="jornadaSelect">Jornada: </label>
-                            <select name="jornadaSelect" name="jornadaSelect" id="jornadaSelect" disabled> 
-                                <option value="">Selecciona una jornada</option>
-                            </select>
+                            <select name="jornadaSelect" name="jornadaSelect" id="jornadaSelect" placeholder="Hs semanales"> </select>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="columna1" id="anio">
                             <label for="anioSelect">Año: </label>
                             <select name="anioSelect" id="anioSelect">
                                 <!-- la idea es que las option se generen con un  mapeo del JSON, de forma que solo sean opciones aquellos años que tienen informacion en el JSON-->
-                                <option value="">Año a consultar</option>
+                                <option value="2019">2019</option>
                             </select>
                         </div>
                         <div class="columna2" id="mes">
@@ -98,66 +94,38 @@
                             </select>
                         </div>
                     </div>
-
-                    <div class="row" id="consultarAusencias">
-                        <div class="columna1">
-                            <label for="checkboxLicencias"> Tuvo ausencias en el mes</label>
-                            <input type="checkbox" id="checkboxLicencias" name="checkboxLicencias" value="true">                                
+                    <div class="row">
+                        <div class="columna1" id="licencia">
+                            <label for="licenciaSelect">Ausencias: </label>
+                            <select name="licenciaSelect" id="licenciaSelect">
+                                <!-- motrar icono de ayuda que indicque cuando ul,a licencia es con goce y cuando es sin goce-->
+                                <option value="no">No</option>
+                                <option value="02">Con goce de sueldo</option>
+                                <option value="03">Sin goce de sueldo</option>  
+                                <option value="04">Suspención</option> 
+                            </select>
                         </div>
-                        <div class="columna2" id="tipoAusencia">
-                            <label for="tipoAusenciaSelect">Tipo de ausencias</label>
-                            <select name="tipoAusenciaSelect" id="tipoAusenciaSelect">
-                                <option value="">Selecciona tipo de ausencia</option>
-                                <option value="00">Justificadas</option>
-                                <option value="01">Injustificadas</option>
-                                <option value="01">Ambas</option>
+                        <div class="columna2" id="diasLicencia">
+                            <label for="diasLicenciaSelect">Dias ausente: </label>
+                            <select name="diasLicenciaSelect" id="diasLicenciaSelect" disabled>
+                                <!-- solo se habilita en caso de que haya habido ausencias en el mes -->
                             </select>
                         </div>
                     </div>
-
-                    <div class="row" id="justificadas">
-                        <div class="columna1" >
-                            <label for="diasLicenciaConGoceSelect">Justificadas c/goce: </label>
-                            <select name="diasLicenciaConGoceSelect" id="diasLicenciaConGoceSelect" disabled>
-                                <option value="">Selecciona</option>
-                            </select>                     
-                        </div>
-                        <div class="columna2" >
-                            <label for="diasLicenciaSinGoceSelect">Justificadas s/goce: </label>
-                            <select name="diasLicenciaSinGoceSelect" id="diasLicenciaSinGoceSelect" disabled>
-                                <option value="">Selecciona</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row" id="justificadas">
-                        <div class="columna1" >
-                            <label for="diasLicenciaInjustificadasSelect">injustificadas: </label>
-                            <select name="diasLicenciaInjustificadasSelect" id="diasLicenciaInjustificadasSelect" disabled>
-                                <option value="">Selecciona</option>
-                            </select>                       
-                        </div>
-                        <div class="columna2" >
-                            <label for="diasSuspencionSelect">Suspenciones: </label>
-                            <select name="diasSuspencionSelect" id="diasSuspencionSelect"  disabled >
-                                <option value="">Selecciona</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="row" id="antiguedad">
-                        <div class="columna1" >
+                    <div class="row">
+                        <div class="columna1" id="antiguedad">
                             <label for="antiguedadSelect">Antigüedad: </label> <!--  reemplazar por fecha de ingreso y calcuylar antiguedad con JS-->
                             <select name="antiguedadSelect" id="antiguedadSelect"></select>
                         </div>
-                        <div class="columna2" id="checkboxVacaciones"> <!-- calcula plus vacacional segun antiguedad -->
-                            <input type="checkbox" id="checkboxVacaciones" name="checkboxVacaciones" value="true">
-                            <label for="checkboxVacaciones"> Licencia por Vacaciones</label>                                
+                        <div class="columna2" id="vacaciones"> <!-- calcula plus vacacional segun antiguedad -->
+                            <label for="vacacionesSelect">Vacaciones</label>
+                            <select name="vacacionesSelect" id="vacacionesSelect">
+                                <option value="00">no</option>
+                                <option value="01">si</option>
+                            </select>
                         </div>
-                        
                     </div>
-
-                    <div class="row" id="extras">
+                    <div class="row">
                         <div class="columna1" id="hsExtra50"><!--  Según la legislación vigente, la realización de horas extras se encuentra limitada a un máximo de 3 horas diarias, 30 horas mensuales o 200 horas anuales (Decretos 16.115/1933 y 484/2000).-->
                             <label for="hsExtra50Select">Horas Extras 50%: </label> 
                             <select name="hsExtra50Select" id="hsExtra50Select"></select>
@@ -167,20 +135,24 @@
                             <select name="hsExtra100Select" id="hsExtra100Select"></select>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="columna1" id="afiliadoAtacc">
-                            <label for="checkboxAfiliadoAtacc">Afiliado ATACC: </label>
-                            <input type="checkbox" id="checkboxAfiliadoAtacc"> 
+                            <label for="afiliadoAtaccSelect">Afiliado ATACC: </label>
+                            <select name="afiliadoAtaccSelect" id="afiliadoAtaccSelect">
+                                <option value="01">si</option>
+                                <option value="02">no</option>
+                            </select>
                         </div>
                         <div class="columna2" id="afiliadoConexo">
-                            <label for="checkboxAfiliadoConexo">Afiliado Conexo: </label>
-                            <input type="checkbox" id="checkboxAfiliadoConexo"> 
+                            <label for="afiliadoConexoSelect">Afiliado Conexo: </label>
+                            <select name="afiliadoConexoSelect" id="afiliadoConexoSelect">
+                                <option value="01">si</option>
+                                <option value="02">no</option>
+                            </select>
                         </div>
                     </div>
-
-                    <div id="boton_calcular" >
-                        <button class="boton_calcular_aceptar" id="btnCalcular">Calcular</button>
+                    <div id="boton_calcular">
+                        <button class="boton_calcular_aceptar">Calcular</button>
                     </div>
                 </div>
             </form>	
@@ -648,7 +620,6 @@
                     </div>
                 </div>
 			</div>
-            
         </div>
     </main>
     <footer>
@@ -664,6 +635,6 @@
          -->
 
     <!-- Script Personalizado -->
-    <script src="./js/mainCopy.js"></script> 
+        <script src="./js/main.js"></script>    
 </body>
 </html>
