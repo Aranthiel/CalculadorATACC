@@ -222,6 +222,7 @@ selectCategoria.addEventListener('change', function() {
         vCategoria.jornada=48;
     }
     else {
+        selectJornada.innerHTML="";
         for ( var i=36; i>=20; i--){ // ¿como hago para que se incremente en 0,5 en lugar de en 1?
             const option = document.createElement('option');    
             option.value = i;
