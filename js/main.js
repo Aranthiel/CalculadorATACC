@@ -256,6 +256,7 @@ let months2022=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", 
 let months2023=["Enero", "Febrero", "Marzo", "Abril"];
 
 function agregarOpcionSelect(opcion, selector){
+    selector.innerHTML="";
     const option = document.createElement('option');
     const valor = opcion;
     option.value = valor;
@@ -269,6 +270,7 @@ function limpiarOpcionesSelect(selector){
 }
 
 function agregarOpcionSelectHasta(cantidad, selector){
+    selector.innerHTML="";
     for ( var i=0; i<=(cantidad); i++){
         const option = document.createElement('option');    
         option.value = i;
