@@ -2,463 +2,646 @@
     "paritarias": {
         "2020": {
             "Octubre": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 41669.63,
-                    "no remunerativo": 5000
+                    "remunerativo": 0,
+                    "noRemunerativo": 5000
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 42159.86,
-                    "no remunerativo": 5000
+                    "remunerativo": 0,
+                    "noRemunerativo": 5000
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 33335.7,
-                    "no remunerativo": 3750
+                    "remunerativo": 0,
+                    "noRemunerativo": 3750
                 }
             },
             "Noviembre": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                 "basico": 41669.63,
-                "no remunerativo": 5000
+                "remunerativo": 0,
+                "noRemunerativo": 5000
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                 "basico": 42159.86,
-                "no remunerativo": 5000
+                "remunerativo": 0,
+                "noRemunerativo": 5000
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                 "basico": 33335.7,
-                "no remunerativo": 3750
+                "remunerativo": 0,
+                "noRemunerativo": 3750
                 }
             },
             "Diciembre": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 41669.63,
-                    "no remunerativo": 5000
+                    "remunerativo": 0,
+                    "noRemunerativo": 5000
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 42159.86,
-                    "no remunerativo": 5000
+                    "remunerativo": 0,
+                    "noRemunerativo": 5000
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 33335.7,
-                    "no remunerativo": 3750
+                    "remunerativo": 0,
+                    "noRemunerativo": 3750
                 }
             }
         },
         "2021": {
             "Enero": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 41669.63,
-                    "no remunerativo": 11042.43
+                    "remunerativo": 0,
+                    "noRemunerativo": 11042.43
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 42159.86,
-                    "no remunerativo": 11163.43
+                    "remunerativo": 0,
+                    "noRemunerativo": 11163.43
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 33335.7,
-                    "no remunerativo": 8418.43
+                    "remunerativo": 0,
+                    "noRemunerativo": 8418.43
                 }
             },
             "Febrero": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 41669.63,
-                    "no remunerativo": 17084.86
+                    "remunerativo": 0,
+                    "noRemunerativo": 17084.86
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 42159.86,
-                    "no remunerativo": 17303.86
+                    "remunerativo": 0,
+                    "noRemunerativo": 17303.86
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 33335.7,
-                    "no remunerativo": 13272.86
+                    "remunerativo": 0,
+                    "noRemunerativo": 13272.86
                 }
             },
             "Marzo": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 41669.63,
-                    "no remunerativo": 23127.29
+                    "remunerativo": 0,
+                    "noRemunerativo": 23127.29
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 42159.86,
-                    "no remunerativo": 23444.29
+                    "remunerativo": 0,
+                    "noRemunerativo": 23444.29
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 33335.7,
-                    "no remunerativo": 18127.29
+                    "noRemunerativo": 18127.29
                 }
             },
             "Abril": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 53970.25,
-                    "no remunerativo": 0
+                    "remunerativo": 0,
+                    "noRemunerativo": 0
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 54563.43,
-                    "no remunerativo": 0
+                    "remunerativo": 0,
+                    "noRemunerativo": 0
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 42998.7,
-                    "no remunerativo": 0
+                    "noRemunerativo": 0
                 }
             },
             "Mayo": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                 "basico": 56470.25,
-                "no remunerativo": 4517.62
+                "remunerativo": 0,
+                "noRemunerativo": 4517.62
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                 "basico": 57063.43,
-                "no remunerativo": 4565.07
+                "remunerativo": 0,
+                "noRemunerativo": 4565.07
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                 "basico": 44873.7,
-                "no remunerativo": 3589.9
+                "remunerativo": 0,
+                "noRemunerativo": 3589.9
                 }
             },
             "Junio": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 56470.25,
-                    "no remunerativo": 4517.62
+                    "remunerativo": 0,
+                    "noRemunerativo": 4517.62
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 57063.43,
-                    "no remunerativo": 4565.07
+                    "remunerativo": 0,
+                    "noRemunerativo": 4565.07
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 44873.7,
-                    "no remunerativo": 3589.9
+                    "remunerativo": 0,
+                    "noRemunerativo": 3589.9
                 }
             },
             "Julio": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 56470.25,
-                    "no remunerativo": 4517.62
+                    "remunerativo": 0,
+                    "noRemunerativo": 4517.62
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 57063.43,
-                    "no remunerativo": 4565.07
+                    "remunerativo": 0,
+                    "noRemunerativo": 4565.07
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 44873.7,
-                    "no remunerativo": 3589.9
+                    "remunerativo": 0,
+                    "noRemunerativo": 3589.9
                 }
             },
             "Agosto": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 56470.25,
-                    "no remunerativo": 8517.62
+                    "remunerativo": 0,
+                    "noRemunerativo": 8517.62
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 57063.43,
-                    "no remunerativo": 8565.07
+                    "remunerativo": 0,
+                    "noRemunerativo": 8565.07
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 44873.7,
-                    "no remunerativo": 7599.50
+                    "remunerativo": 0,
+                    "noRemunerativo": 7599.50
                 }
             },
             "Septiembre": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 56470.25,
-                    "no remunerativo": 9035.24
+                    "remunerativo": 0,
+                    "noRemunerativo": 9035.24
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 57063.43,
-                    "no remunerativo": 9130.15
+                    "remunerativo": 0,
+                    "noRemunerativo": 9130.15
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 44873.7,
-                    "no remunerativo": 7179.79
+                    "remunerativo": 0,
+                    "noRemunerativo": 7179.79
                 }
             },
             "Octubre": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 56470.25,
-                    "no remunerativo": 9035.24
+                    "remunerativo": 0,
+                    "noRemunerativo": 9035.24
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 57063.43,
-                    "no remunerativo": 9130.15
+                    "remunerativo": 0,
+                    "noRemunerativo": 9130.15
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 44873.7,
-                    "no remunerativo": 7179.79
+                    "remunerativo": 0,
+                    "noRemunerativo": 7179.79
                 }
             },
             "Noviembre": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 56470.25,
-                    "no remunerativo": 14177.56
+                    "remunerativo": 0,
+                    "noRemunerativo": 14177.56
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 57063.43,
-                    "no remunerativo": 14265.86
+                    "remunerativo": 0,
+                    "noRemunerativo": 14265.86
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 44873.7,
-                    "no remunerativo": 11218.46
+                    "remunerativo": 0,
+                    "noRemunerativo": 11218.46
                 }
             },
             "Diciembre": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 56470.25,
-                    "no remunerativo": 14177.56
+                    "remunerativo": 0,
+                    "noRemunerativo": 14177.56
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 57063.43,
-                    "no remunerativo": 14265.86
+                    "remunerativo": 0,
+                    "noRemunerativo": 14265.86
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 44873.7,
-                    "no remunerativo": 11218.46
+                    "remunerativo": 0,
+                    "noRemunerativo": 11218.46
                 }
                 }
         },
         "2022": {
             "Enero":  {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 70587.81,
-                    "no remunerativo": 4517.62
+                    "remunerativo": 0,
+                    "noRemunerativo": 4517.62
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 71329.29,
-                    "no remunerativo": 4565.07
+                    "remunerativo": 0,
+                    "noRemunerativo": 4565.07
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 56092.13,
-                    "no remunerativo": 3589.9
+                    "noRemunerativo": 3589.9
                 }
             },
             "Febrero":  {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico":  70587.81,
-                    "no remunerativo": 10683.35
+                    "remunerativo": 0,
+                    "noRemunerativo": 10683.35
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 71329.29,
-                    "no remunerativo": 10842.05
+                    "remunerativo": 0,
+                    "noRemunerativo": 10842.05
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 56092.13,
-                    "no remunerativo": 7179.79
+                    "remunerativo": 0,
+                    "noRemunerativo": 7179.79
                 }
             },
             "Marzo": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico":  70587.81,
-                    "no remunerativo": 16376.13
+                    "remunerativo": 0,
+                    "noRemunerativo": 16376.13
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 71329.29,
-                    "no remunerativo": 16548.4
+                    "remunerativo": 0,
+                    "noRemunerativo": 16548.4
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 56092.13,
-                    "no remunerativo": 13013.37
+                    "remunerativo": 0,
+                    "noRemunerativo": 13013.37
                 }
             },
             "Abril": {
-            "Categoría 1 Mantenimiento": {
-                "basico": 86964.18,
-                "no remunerativo": 5217.85
+            "Categoría01": {
+                    "descripción":  "Mantenimiento",
+                    "basico": 86964.18,
+                    "remunerativo": 0,
+                    "noRemunerativo": 5217.85
             },
-            "Categoría 2 Administrativo": {
-                "basico": 87877.69,
-                "no remunerativo": 5272.66
+            "Categoría02": {
+                    "descripción": "Administrativo",
+                    "basico": 87877.69,
+                    "remunerativo": 0,
+                    "noRemunerativo": 5272.66
             },
-            "Categoría 3 Operaciones": {
-                "basico": 69105.50,
-                "no remunerativo": 4146.33
+            "Categoría03": {
+                    "descripción": "Operaciones",
+                    "basico": 69105.50,
+                    "remunerativo": 0,
+                    "noRemunerativo": 4146.33
             }
             },
             "Mayo": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 86964.18,
-                    "no remunerativo": 10435.7
+                    "remunerativo": 0,
+                    "noRemunerativo": 10435.7
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 87877.69,
-                    "no remunerativo": 10545.32
+                    "remunerativo": 0,
+                    "noRemunerativo": 10545.32
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 69105.50,
-                    "no remunerativo": 8292.66
+                    "remunerativo": 0,
+                    "noRemunerativo": 8292.66
                 }
             },
             "Junio": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 86964.18,
-                    "no remunerativo": 15653.55
+                    "remunerativo": 0,
+                    "noRemunerativo": 15653.55
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 87877.69,
-                    "no remunerativo": 15817.98
+                    "remunerativo": 0,
+                    "noRemunerativo": 15817.98
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 69105.50,
-                    "no remunerativo": 12438.99
+                    "remunerativo": 0,
+                    "noRemunerativo": 12438.99
                 }
             },
             "Julio": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 86964.18,
-                    "no remunerativo": 15653.55
+                    "remunerativo": 0,
+                    "noRemunerativo": 15653.55
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 87877.69,
-                    "no remunerativo": 15817.98
+                    "remunerativo": 0,
+                    "noRemunerativo": 15817.98
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 69105.50,
-                    "no remunerativo": 12438.99
+                    "remunerativo": 0,
+                    "noRemunerativo": 12438.99
                 }
             },
             "Agosto": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 86964.18,
-                    "no remunerativo": 33481.21
+                    "remunerativo": 0,
+                    "noRemunerativo": 33481.21
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 87877.69,
-                    "no remunerativo": 33833.91
+                    "remunerativo": 0,
+                    "noRemunerativo": 33833.91
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 69105.50,
-                    "no remunerativo":26605.62
+                    "remunerativo": 0,
+                    "noRemunerativo":26605.62
                 }
             },
             "Septiembre": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 86964.18,
-                    "no remunerativo": 42177.93
+                    "remunerativo": 0,
+                    "noRemunerativo": 42177.93
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 87877.69,
-                    "no remunerativo": 42620.68
+                    "remunerativo": 0,
+                    "noRemunerativo": 42620.68
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 69105.50,
-                    "no remunerativo":33516.17
+                    "remunerativo": 0,
+                    "noRemunerativo":33516.17
                 }
             },
             "Octubre": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 86964.18,
-                    "no remunerativo":  42177.93
+                    "remunerativo": 0,
+                    "noRemunerativo":  42177.93
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 87877.69,
-                    "no remunerativo": 42620.68
+                    "remunerativo": 0,
+                    "noRemunerativo": 42620.68
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 69105.50,
-                    "no remunerativo":33516.17
+                    "remunerativo": 0,
+                    "noRemunerativo":33516.17
                 }
             },
             "Noviembre": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 86964.18,
-                    "no remunerativo":  51743.69
+                    "remunerativo": 0,
+                    "noRemunerativo":  51743.69
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 87877.69,
-                    "no remunerativo": 52287.22
+                    "remunerativo": 0,
+                    "noRemunerativo": 52287.22
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 69105.50,
-                    "no remunerativo":41117.77
+                    "remunerativo": 0,
+                    "noRemunerativo":41117.77
                 }
             },
             "Diciembre":{
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 86964.18,
-                    "no remunerativo":  51743.69
+                    "remunerativo": 0,
+                    "noRemunerativo":  51743.69
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 87877.69,
-                    "no remunerativo": 52287.22
+                    "remunerativo": 0,
+                    "noRemunerativo": 52287.22
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 69105.50,
-                    "no remunerativo":41117.77
+                    "remunerativo": 0,
+                    "noRemunerativo":41117.77
                 }
             }
         },
         "2023": {
             "Enero":  {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 120010.57,
-                    "no remunerativo": 18697.3
+                    "remunerativo": 0,
+                    "noRemunerativo": 18697.3
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 121271.21,
-                    "no remunerativo": 188893.7
+                    "remunerativo": 0,
+                    "noRemunerativo": 188893.7
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 95365.59,
-                    "no remunerativo": 14857.68
+                    "remunerativo": 0,
+                    "noRemunerativo": 14857.68
                 }
             },
             "Febrero":  {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 120010.57,
                     "remunerativo": 18032.02,
-                    "no remunerativo": 18697.3
+                    "noRemunerativo": 18697.3
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 121271.21,                    
                     "remunerativo": 18221.44,
-                    "no remunerativo": 188893.7
+                    "noRemunerativo": 188893.7
                 },
-                "Categoría 3 Operaciones": {                    
+                "Categoría03": {
+                    "descripción": "Operaciones",                    
                     "basico": 95365.59,
                     "remunerativo": 12329.03,
-                    "no remunerativo": 14857.68
+                    "noRemunerativo": 14857.68
                 }
             },            
             "Marzo": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 120010.57,
                     "remunerativo": 15517.25,
-                    "no remunerativo": 18697.3
+                    "noRemunerativo": 18697.3
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 121271.21,                    
                     "remunerativo": 15680.25,
-                    "no remunerativo": 188893.7
+                    "noRemunerativo": 188893.7
                 },
-                "Categoría 3 Operaciones": {                    
+                "Categoría03": {
+                    "descripción": "Operaciones",                    
                     "basico": 95365.59,
                     "remunerativo": 12330.68,
-                    "no remunerativo": 14857.68
+                    "noRemunerativo": 14857.68
                 }
             },
             "Abril": {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 172257.14,
-                    "no remunerativo":0
+                    "remunerativo": 0,
+                    "noRemunerativo":0
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 174066.6,
-                    "no remunerativo": 0
+                    "remunerativo": 0,
+                    "noRemunerativo": 0
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 136882.98,
-                    "no remunerativo": 0
+                    "remunerativo": 0,
+                    "noRemunerativo": 0
                 }
             },
             "Mayo":  {
-                "Categoría 1 Mantenimiento": {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
                     "basico": 172257.14,
-                    "no remunerativo":0
+                    "remunerativo": 0,
+                    "noRemunerativo":0
                 },
-                "Categoría 2 Administrativo": {
+                "Categoría02": {
+                    "descripción": "Administrativo",
                     "basico": 174066.6,
-                    "no remunerativo": 0
+                    "remunerativo": 0,
+                    "noRemunerativo": 0
                 },
-                "Categoría 3 Operaciones": {
+                "Categoría03": {
+                    "descripción": "Operaciones",
                     "basico": 136882.98,
-                    "no remunerativo": 0
+                    "remunerativo": 0,
+                    "noRemunerativo": 0
                 }
             }
         }

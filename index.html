@@ -65,18 +65,18 @@
                     <div class="renglon" id="categoria">
                         <div class="columna1" id="categoria">
                             <label for="categoriaSelect">Categoria: </label>
-                            <select name="categoriaSelect" id="categoriaSelect">
+                            <select name="categoriaSelect" id="categoriaSelect" placeholder="Selecciona una categoría">
                                 <!-- la idea es que las option se generen con un mapeo del JSON, de forma que solo sean opciones aquellos meses de ese año que tienen informacion en el JSON-->
-                                <option value="">Selecciona una categoría</option>
-                                <option value="01">Mantenimiento</option>
-                                <option value="02">Administrativo</option>
-                                <option value="03">Operaciones</option>  
+                                <option value="">Seleccionar</option>
+                                <option value="Categoría01">Mantenimiento</option>
+                                <option value="Categoría02">Administrativo</option>
+                                <option value="Categoría03">Operaciones</option>  
                             </select>
                         </div>
                         <div class="columna2" id="jornada"> <!-- Solo se habilita si la categoría seleccionada es operaciones -->
                             <label for="jornadaSelect">Jornada: </label>
                             <select name="jornadaSelect" name="jornadaSelect" id="jornadaSelect" disabled> 
-                                <option value="">Selecciona una jornada</option>
+                                <option value="">Seleccionar</option>
                             </select>
                         </div>
                     </div>
@@ -86,12 +86,13 @@
                             <label for="anioSelect">Año: </label>
                             <select name="anioSelect" id="anioSelect">
                                 <!-- la idea es que las option se generen con un  mapeo del JSON, de forma que solo sean opciones aquellos años que tienen informacion en el JSON-->
-                                <option value="">Año a consultar</option>
+                                <option value="">Seleccionar</option>
                             </select>
                         </div>
                         <div class="columna2" id="mes">
                             <label for="mesSelect">Mes: </label>
                             <select name="mesSelect" id="mesSelect">
+                                <option value="">Seleccionar</option>
                                 <!-- la idea es que las option se generen con un mapeo del JSON, de forma que solo sean opciones aquellos meses de ese año que tienen informacion en el JSON-->
                                 
                             </select>

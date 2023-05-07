@@ -162,8 +162,7 @@ p{
                 text-align: start;
                 .columna1{
                     width: 57%;
-                    margin-left: 1rem;
-                    
+                    margin-left: 1rem;                    
                     label{
                         text-transform: uppercase   ;
                     }
@@ -171,19 +170,17 @@ p{
                 .columna2{
                     width: 43%;
                     margin-right: 1rem;
-                    
-                    
                     label{
                         text-transform: uppercase   ;
                     }
                 }
 
             }
-            #jornadaSelect{
-                width: 7rem;
+            #jornadaSelect, #categoriaSelect, #anioSelect, #mesSelect,#tipoAusenciaSelect,  {
+                width: 10rem;
             }
             
-            #premiosImput{
+            #premiosImput, #antiguedadSelect, #diasLicenciaConGoceSelect, #diasLicenciaSinGoceSelect, #diasLicenciaARTSelect, #diasLicenciaInjustificadasSelect, #diasSuspencionSelect, #hsExtra50Select, #hsExtra100Select{
                 width:  7rem;
             }
             #boton_calcular{

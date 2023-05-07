@@ -127,9 +127,9 @@ p {
         margin-right: 1rem; }
         .recibo form #datos .renglon .columna2 label {
           text-transform: uppercase; }
-    .recibo form #datos #jornadaSelect {
-      width: 7rem; }
-    .recibo form #datos #premiosImput {
+    .recibo form #datos #jornadaSelect, .recibo form #datos #categoriaSelect, .recibo form #datos #anioSelect, .recibo form #datos #mesSelect, .recibo form #datos #tipoAusenciaSelect {
+      width: 10rem; }
+    .recibo form #datos #premiosImput, .recibo form #datos #antiguedadSelect, .recibo form #datos #diasLicenciaConGoceSelect, .recibo form #datos #diasLicenciaSinGoceSelect, .recibo form #datos #diasLicenciaARTSelect, .recibo form #datos #diasLicenciaInjustificadasSelect, .recibo form #datos #diasSuspencionSelect, .recibo form #datos #hsExtra50Select, .recibo form #datos #hsExtra100Select {
       width: 7rem; }
     .recibo form #datos #boton_calcular .boton_calcular_aceptar {
       background-color: #0f012e;

@@ -2,44 +2,8 @@
 
 window.addEventListener("load", function (){
 
-//////////////////////////////////////////// FETCH ////////////////////////////////////////////
-    const paritariasJSON = '../paritarias.json'
-    const paritarias = [];
-    fetch(paritariasJSON)
-    .then(response => response.json())
-    .then(data => {
-        console.log(`data`); 
-        console.log(data); 
-        
-        // let mes_anio = vCategoria.mesElegido.toLowerCase() + vCategoria.anioElegido;
-        
-        const anioParitarias=[];
-        const mesParitarias =[]
-        for (const year in data.paritarias) {
-            const paritariaAño = data.paritarias[year];
-            for (const month in data.paritarias[year]) {
-                const paritariaMes = data.paritarias[year][month]
-                for (const category in data.paritarias[year][month]) {
-                    const paritaria = data.paritarias[year][month][category];
-                    mesParitarias.push(paritaria);                
-                }
-                anioParitarias.push(paritariaMes);
-            }
-            paritarias.push(paritariaAño);
-        }
-        console.log(`paritarias`);
-        console.log(paritarias);
-        console.log( paritarias[0]["Octubre"])
-        console.log( paritarias[0]["Octubre"]["Categoría03"])
-        console.log( paritarias[0]["Octubre"]["Categoría03"].basico)
-    })
-    .catch(error => console.error(error));
-
-        /// los datos despues deben ser utilizados en function buscarBasico(){
-
 
 ////////////////////////// clase, constructor, instancias y arrays //////////////////////////
-//  esto se dejo de usar en el momento en que se implemento el fetch y se usa lainformacion de paritarias.json
 
 class Paritaria {
     constructor(anio, mes, basicoMantenimiento, noRemunerativoMantenimiento, basicoAdministrativo, noRemunerativoAdministrativo, basicoOperaciones, noRemunerativoOperaciones){
@@ -54,35 +18,48 @@ class Paritaria {
     }
 };
 
-class Consulta {
-    constructor(anio, mes, categoria, antiguedad){
-        this.anio=anio;
-        this.mes=mes;
-        this.categoria=categoria;
-        this.antiguedad=antiguedad;
-    }
-};
+const paritariasArr = [];
 
-//////////////////////////////////////// LOCAL STORAGE ////////////////////////////////////////
+paritariasArr["octubre2020"] = new Paritaria (2020, "Octubre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
+paritariasArr["noviembre2020"] = new Paritaria (2020, "Noviembre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
+paritariasArr["diciembre2020"] = new Paritaria (2020, "Diciembre", 41669.63, 5000, 42159.86, 5000, 33335.7, 3750);
+const y2020 =[paritariasArr["octubre2020"], paritariasArr["noviembre2020"], paritariasArr["diciembre2020"]];
 
+paritariasArr["enero2021"] = new Paritaria (2021, "Enero", 41669.63, 11045.43, 42159.86, 11163.43, 33335.7, 8418.43);
+paritariasArr["febrero2021"] = new Paritaria (2021, "Febrero", 41669.63, 17084,86, 42159.86, 17303.86, 33335.7, 13272.86);
+paritariasArr["marzo2021"] = new Paritaria (2021, "Marzo", 41669.63, 23127.29, 42159.86, 23444.29, 33335.7, 18127.29);
+paritariasArr["abril2021"] = new Paritaria (2021, "Abril", 53970.25, 0, 54563.43, 0, 42998.7, 0);
+paritariasArr["mayo2021"] = new Paritaria (2021, "Mayo", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+paritariasArr["junio2021"] = new Paritaria (2021, "Junio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+paritariasArr["julio2021"] = new Paritaria (2021, "Julio", 56470.25, 4517.62, 57063.43, 4565.07, 44873.7, 3589.9);
+paritariasArr["agosto2021"] = new Paritaria (2021, "Agosto", 56470.25, 8517.62, 57063.43, 8565.07, 44873.7, 7599.5);
+paritariasArr["septiembre2021"] = new Paritaria (2021, "Septiembre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
+paritariasArr["octubre2021"] = new Paritaria (2021, "Octubre", 56470.25, 9035.24, 57063.43, 9130.15, 44873.7, 7179.79);
+paritariasArr["noviembre2021"] = new Paritaria (2021, "Noviembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
+paritariasArr["diciembre2021"] = new Paritaria (2021, "Diciembre", 56470.25, 14177.56, 57063.43, 14265.86, 44873.7, 11218.46);
+const y2021 =[paritariasArr["enero2021"], paritariasArr["febrero2021"], paritariasArr["marzo2021"], paritariasArr["abril2021"], paritariasArr["mayo2021"], paritariasArr["junio2021"], paritariasArr["julio2021"], paritariasArr["agosto2021"], paritariasArr["septiembre2021"], paritariasArr["octubre2021"], paritariasArr["noviembre2021"], paritariasArr["diciembre2021"]]
 
-function usarLocalStorage(){
-    // se instan cia un objeto Consulta
-    const consulta = new Consulta (vCategoria.anioElegido,vCategoria.mesElegido, vCategoria.categoriaElegida, vCategoria.antiguedad);
+paritariasArr["enero2022"] = new Paritaria (2022, "Enero", 70587.81, 4517.62, 71329.29, 4565.07, 56092.13, 3589.9);
+paritariasArr["febrero2022"] = new Paritaria (2022, "Febrero", 70587.81, 10683.35, 71329.29, 10842.05, 56092.13, 3589.9);
+paritariasArr["marzo2022"] = new Paritaria (2022, "Marzo", 70587.81, 16376.13, 71329.29, 16548.4, 56092.13, 7179.79);
+paritariasArr["abril2022"] = new Paritaria (2022, "Abril", 86964.18, 5217.85, 87877.69, 5272.66, 69105.5, 4146.33);
+paritariasArr["mayo2022"] = new Paritaria (2022, "Mayo", 86964.18, 10435.7, 87877.69, 10545.32, 69105.5, 8292.66);
+paritariasArr["junio2022"] = new Paritaria (2022, "Junio", 86964.18, 15653.55, 87877.69, 15817.98, 69105.5, 12438.99);
+paritariasArr["julio2022"] = new Paritaria (2022, "Julio", 86964.18, 15653.55, 87877.69, 15817.98, 69105.5, 12438.99);
+paritariasArr["agosto2022"] = new Paritaria (2022, "Agosto",  86964.18, 33481.21, 87877.69, 33833.91, 69105.5, 26605.62);
+paritariasArr["septiembre2022"] = new Paritaria (2022, "Septiembre",  86964.18, 42177.93, 87877.69, 42620.68, 69105.5, 33516.17);
+paritariasArr["octubre2022"] = new Paritaria (2022, "Octubre",  86964.18, 42177.93, 87877.69, 42620.68, 69105.5, 33516.17);
+paritariasArr["noviembre2022"] = new Paritaria (2022, "Noviembre",  86964.18, 51743.69, 87877.69, 52287.22, 69105.5, 41117.77);
+paritariasArr["diciembre2022"] = new Paritaria (2022, "Diciembre",  86964.18, 51743.69, 87877.69, 52287.22, 69105.5, 41117.77);
+const y2022 =[paritariasArr["enero2022"], paritariasArr["febrero2022"], paritariasArr["marzo2022"], paritariasArr["abril2022"], paritariasArr["mayo2022"], paritariasArr["junio2022"], paritariasArr["julio2022"], paritariasArr["agosto2022"], paritariasArr["septiembre2022"], paritariasArr["octubre2022"], paritariasArr["noviembre2022"], paritariasArr["diciembre2022"]]
 
-    //se guarda el objeto Consulta en el local Storage
-    localStorage.setItem('consulta', JSON.stringify(consulta));
+paritariasArr["enero2023"] = new Paritaria (2023, "Enero", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
+paritariasArr["febrero2023"] = new Paritaria (2023, "Febrero", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
+paritariasArr["marzo2023"] = new Paritaria (2023, "Marzo", 120010.57, 18697.3, 121271.21, 18893.7, 95365.59, 14857.98); // se incorpora un concepto remunerativo que no estaba definido en el contructor por lo qu eno se incluye, tema para ver
+paritariasArr["abril2023"] = new Paritaria (2023, "Abril",172257.14, 0, 174066.6, 0, 136882.98, 0); 
+paritariasArr["mayo2023"] = new Paritaria (2023, "Mayo",172257.14, 0, 174066.6, 0, 136882.98, 0 ); 
+const y2023=[paritariasArr["enero2023"], paritariasArr["febrero2023"], paritariasArr["marzo2023"], paritariasArr["abril2023"], paritariasArr["mayo2023"]]
 
-    // tomo el div para poder
-    const resumenConsulta = document.getElementById('resumenConsulta');
-    
-    // recupero la informacion guardada en el local Storage y la convierto para poder  acceder a la info
-    const consultaRecuperada = JSON.parse(localStorage.getItem('consulta'));
-    // se define el mensaje usando la informacion que recuperamos del local Storage
-    const mensaje = `Haz realizado una consulta para los haberes de ${consultaRecuperada.mes} ${consultaRecuperada.anio} para un trabajador con ${consultaRecuperada.antiguedad} años de antiguedad que tiene categoria ${consultaRecuperada.categoria}`;
-
-    resumenConsulta.innerHTML = mensaje;
-}
 
 
 /////////////////////////////////////////// Objeto ///////////////////////////////////////////
@@ -184,14 +161,15 @@ selectAusencias.addEventListener("change", function(){
     toggleDisabled(habilitarImput,selectTipoAusencias);
 });
 
+
 const selectLlegadasTarde= document.querySelector("#checkboxLlegadaTarde");
-selectLlegadasTarde.addEventListener("change", () => {
-    console.log(`cobra Puntulaidad: ${selectLlegadasTarde.checked}` );    
-    });
-    
+selectLlegadasTarde.addEventListener("change", () => console.log(`Tuvo llegadas tarde: ${selectLlegadasTarde.checked}` ));
+
+
+
+
 const selectDiasLicenciaConGoce = document.querySelector("#diasLicenciaConGoceSelect");
 const selectDiasLicenciaSinGoce = document.querySelector("#diasLicenciaSinGoceSelect");
-const selectDiasLicenciaART = document.querySelector("#diasLicenciaARTSelect");
 
 const selectDiasLicenciaInjustificadas = document.querySelector("#diasLicenciaInjustificadasSelect");
 const selectDiasSuspencion = document.querySelector("#diasSuspencionSelect");
@@ -201,7 +179,7 @@ const SelectExtras100 = document.querySelector("#hsExtra100Select");
 
 const SelectAfiliadoATACC = document.querySelector("#checkboxAfiliadoAtacc");
 SelectAfiliadoATACC.addEventListener("change", function(){
-    console.log(`Es afiliado a ATACC: ${SelectAfiliadoATACC.checked}` );
+    console.log(`Es afiliado a Conexo: ${SelectAfiliadoATACC.checked}` );
     if (SelectAfiliadoATACC.checked == true){
         Swal.fire({   
             titleText: "Esta opción aun no está habilitada",
@@ -239,12 +217,12 @@ const btnCalcular = document.querySelector("#btnCalcular");
 
 selectCategoria.addEventListener('change', function() {
     console.log(`select categoría valor ${this.value}`);
-    if (this.value != "Categoría03"){
+    if (this.value != "03"){
         selectJornada.disabled=true;        
         vCategoria.jornada=48;
     }
     else {
-        // selectJornada.innerHTML=""; si limpio las opciones queda preseleccionado el 36 y al no hacer la seleccion se rompe
+        selectJornada.innerHTML="";
         for ( var i=36; i>=20; i--){ // ¿como hago para que se incremente en 0,5 en lugar de en 1?
             const option = document.createElement('option');    
             option.value = i;
@@ -272,7 +250,14 @@ selectCategoria.addEventListener('change', function() {
     }
 });
 
+let years=[2020,2021,2022,2023];  // deberia mapear el Json
+let months2020=["Octubre", "Noviembre", "Diciembre"]; // deberia traer el JSON para el año 2020
+let months2021=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+let months2022=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+let months2023=["Enero", "Febrero", "Marzo", "Abril"];
+
 function agregarOpcionSelect(opcion, selector){
+    selector.innerHTML="";
     const option = document.createElement('option');
     const valor = opcion;
     option.value = valor;
@@ -298,34 +283,27 @@ function agregarOpcionSelectHasta(cantidad, selector){
 agregarOpcionSelectHasta((65-16), selectAntiguedad);
 agregarOpcionSelectHasta((31), selectDiasLicenciaConGoce);
 agregarOpcionSelectHasta((31), selectDiasLicenciaSinGoce);
-agregarOpcionSelectHasta((31), selectDiasLicenciaART);
 agregarOpcionSelectHasta((31), selectDiasLicenciaInjustificadas);
 agregarOpcionSelectHasta((31), selectDiasSuspencion);
 agregarOpcionSelectHasta((30), SelectExtras50);
 agregarOpcionSelectHasta((30), SelectExtras100);
 
-let years=[2020,2021,2022,2023];  // deberia mapear el Json
-years.forEach(anio => agregarOpcionSelect(anio, selectAnio)); // agrega como opciones de selectAnio los años declarados en [years]
 
+years.forEach(anio => agregarOpcionSelect(anio, selectAnio));
 
-let months2020=["Octubre", "Noviembre", "Diciembre"]; // deberia traer el JSON para el año 2020
-let months=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-let months2023=["Enero", "Febrero", "Marzo", "Abril"];
-
-let monthYear=[]; 
-function mesesDisponiblesAnioElegido(valor){
-    //agrega a [monthYear] los meses disponibles segun el año elegido en selectAnio
+let monthYear=[];
+function elegirAnio(valor){
     switch (valor){
         case "2020":
             monthYear=[].concat(months2020);
             console.log(monthYear);
             return monthYear;
         case "2021":
-            monthYear=[].concat(months);
+            monthYear=[].concat(months2021);
             console.log(monthYear);
             return monthYear;
         case "2022":
-            monthYear=[].concat(months);
+            monthYear=[].concat(months2022);
             console.log(monthYear);
             return monthYear;
                         
@@ -340,7 +318,7 @@ function mesesDisponiblesAnioElegido(valor){
 selectAnio.addEventListener('change', function() { 
     vCategoria.anioElegido=this.value;
     limpiarOpcionesSelect(selectMes);
-    (mesesDisponiblesAnioElegido(vCategoria.anioElegido)).forEach(mes => agregarOpcionSelect(mes, selectMes)); // agrega disponibles segun el año elegido en selectAnio
+    (elegirAnio(vCategoria.anioElegido)).forEach(mes => agregarOpcionSelect(mes, selectMes));
 });
 
 ////////////////////////////////////////// FUNCIONES //////////////////////////////////////////
@@ -357,17 +335,26 @@ function calcularValorHora(basico, horasMensuales){
     return  Number(valorHora.toFixed(2));
 };
 
-
-function buscarBasicoFetch(){
-    console.log(`buscarBasicoFetch`);   
-    const anioAConsultar = Number(vCategoria.anioElegido)-2020;
-    const mesAConsultar= vCategoria.mesElegido;
-    const categoriaAConsultar = vCategoria.categoriaElegida;
+function buscarBasico(){
+    let mes_anio = vCategoria.mesElegido.toLowerCase() + vCategoria.anioElegido;    
     
-    vCategoria.basicoCategoria =paritarias[anioAConsultar][mesAConsultar][categoriaAConsultar].basico;
-    vCategoria.noRemunerativoCategoria = paritarias[anioAConsultar][mesAConsultar][categoriaAConsultar].noRemunerativo;
-    console.log(vCategoria.basicoCategoria);
-    console.log(vCategoria.noRemunerativoCategoria);
+    let categoria = vCategoria.categoriaElegida;
+    switch (categoria){
+        case "01":
+            vCategoria.basicoCategoria = paritariasArr[mes_anio].basicoMantenimiento;
+            vCategoria.noRemunerativoCategoria = paritariasArr[mes_anio].noRemunerativoMantenimiento;
+            break;
+
+        case "02":
+            vCategoria.basicoCategoria = paritariasArr[mes_anio].basicoAdministrativo;
+            vCategoria.noRemunerativoCategoria = paritariasArr[mes_anio].noRemunerativoAdministrativo;
+            break;
+        
+        case "03":
+            vCategoria.basicoCategoria = paritariasArr[mes_anio].basicoOperaciones/36*vCategoria.jornada;
+            vCategoria.noRemunerativoCategoria = paritariasArr[mes_anio].noRemunerativoOperaciones/36*vCategoria.jornada;
+            break;
+    }    
 }
 
 function completarValoresCategoria (){
@@ -376,9 +363,8 @@ function completarValoresCategoria (){
     // vCategoria.jornada se completa en selectCategoria.addEventListener
     vCategoria.anioElegido=selectAnio.value;
     vCategoria.mesElegido=selectMes.value; 
-    buscarBasicoFetch();
 
-    //buscarBasico();
+    buscarBasico();
     vCategoria.horasTotalesMes = calcularHorasMensuales(vCategoria.jornada);
     vCategoria.valorHora = calcularValorHora(vCategoria.basicoCategoria, vCategoria.horasTotalesMes);
     
@@ -595,6 +581,23 @@ function calcularSueldo(){
     return haberesNetos;
 };
 
+//////////////////////////////////////// LOCAL STORAGE ////////////////////////////////////////
+
+
+function usarLocalStorage(){
+    const mensaje = `Haz realizado una consulta para los haberes de ${vCategoria.mesElegido} ${vCategoria.anioElegido} para un trabajador con ${vCategoria.antiguedad} años de antiguedad que tiene categoria ${vCategoria.categoriaElegida}`;
+
+    localStorage.setItem('mensaje', mensaje);
+
+    const resumenConsulta = document.getElementById('resumenConsulta');
+    const mensajeGuardado = localStorage.getItem('mensaje');
+
+    if (mensajeGuardado !== null) {
+        resumenConsulta.innerHTML = mensajeGuardado;
+    }
+}
+
+///////////////////////////////////// NO SÉ QUÉ PONER ACÁ /////////////////////////////////////
 
 btnCalcular.addEventListener("click", (e)=>{
     //evitamos el comportamiento por default del form
