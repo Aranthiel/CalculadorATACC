@@ -3,7 +3,7 @@
 window.addEventListener("load", function (){
 
 //////////////////////////////////////////// FETCH ////////////////////////////////////////////
-    const paritariasJSON = '../paritarias.json'
+    const paritariasJSON = './paritarias.json'
     const paritarias = [];
     fetch(paritariasJSON)
     .then(response => response.json())
