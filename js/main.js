@@ -8,8 +8,8 @@ window.addEventListener("load", function (){
     fetch(paritariasJSON)
     .then(response => response.json())
     .then(data => {
-        console.log(`data`); 
-        console.log(data); 
+        // console.log(`data`); 
+        // console.log(data); 
         
         // let mes_anio = vCategoria.mesElegido.toLowerCase() + vCategoria.anioElegido;
         
@@ -27,11 +27,11 @@ window.addEventListener("load", function (){
             }
             paritarias.push(paritariaAño);
         }
-        console.log(`paritarias`);
-        console.log(paritarias);
-        console.log( paritarias[0]["Octubre"])
-        console.log( paritarias[0]["Octubre"]["Categoría03"])
-        console.log( paritarias[0]["Octubre"]["Categoría03"].basico)
+        // console.log(`paritarias`);
+        // console.log(paritarias);
+        // console.log( paritarias[0]["Octubre"])
+        // console.log( paritarias[0]["Octubre"]["Categoría03"])
+        // console.log( paritarias[3]["Mayo"]["Categoría03"].basico)
     })
     .catch(error => console.error(error));
 
@@ -123,8 +123,8 @@ const vCategoria = { // declara un objeto que contiene los valores de la categor
     afiliadoCONEXO:false
 };
 
-console.log(`vCategoria:`);
-console.log(vCategoria);
+// console.log(`vCategoria:`);
+// console.log(vCategoria);
 
 ///////////////////////////////////////////// DOM /////////////////////////////////////////////
 
@@ -146,7 +146,7 @@ const selectMes=document.querySelector("#mesSelect");
 const selectAntiguedad= document.querySelector("#antiguedadSelect");
 const selectVacaciones= document.querySelector("#checkboxVacaciones"); 
 selectVacaciones.addEventListener("change", function (){
-    console.log(`Salio de vacaciones: ${selectVacaciones.checked}` );
+    // console.log(`Salio de vacaciones: ${selectVacaciones.checked}` );
     if (selectVacaciones.checked == true){
         Swal.fire({   
             titleText: "Esta opción aun no está habilitada",
@@ -166,10 +166,10 @@ const imputPremio= document.querySelector("#premiosImput");
 //imputPremio.setAttribute("disabled", "true");
 const selectCobraPremios= document.querySelector("#checkboxCobraPremios"); 
 selectCobraPremios.addEventListener("change", function(){
-    console.log(`cobra premios: ${selectCobraPremios.checked}`)
+    // console.log(`cobra premios: ${selectCobraPremios.checked}`)
     let habilitarImput=selectCobraPremios.checked;
-    console.log(`habilitarImput`);
-    console.log(habilitarImput);
+    // console.log(`habilitarImput`);
+    // console.log(habilitarImput);
     toggleDisabled(habilitarImput,imputPremio);
 });
 
@@ -177,16 +177,16 @@ selectCobraPremios.addEventListener("change", function(){
 const selectTipoAusencias= document.querySelector("#tipoAusenciaSelect");
 const selectAusencias= document.querySelector("#checkboxLicencias");
 selectAusencias.addEventListener("change", function(){
-    console.log(`Tuvo ausencias: ${selectAusencias.checked}`);
+    // console.log(`Tuvo ausencias: ${selectAusencias.checked}`);
     let habilitarImput=selectAusencias.checked;
-    console.log(`habilitarImput`);
-    console.log(habilitarImput);
+    // console.log(`habilitarImput`);
+    // console.log(habilitarImput);
     toggleDisabled(habilitarImput,selectTipoAusencias);
 });
 
 const selectLlegadasTarde= document.querySelector("#checkboxLlegadaTarde");
 selectLlegadasTarde.addEventListener("change", () => {
-    console.log(`cobra Puntulaidad: ${selectLlegadasTarde.checked}` );    
+    // console.log(`cobra Puntulaidad: ${selectLlegadasTarde.checked}` );    
     });
     
 const selectDiasLicenciaConGoce = document.querySelector("#diasLicenciaConGoceSelect");
@@ -201,7 +201,7 @@ const SelectExtras100 = document.querySelector("#hsExtra100Select");
 
 const SelectAfiliadoATACC = document.querySelector("#checkboxAfiliadoAtacc");
 SelectAfiliadoATACC.addEventListener("change", function(){
-    console.log(`Es afiliado a ATACC: ${SelectAfiliadoATACC.checked}` );
+    // console.log(`Es afiliado a ATACC: ${SelectAfiliadoATACC.checked}` );
     if (SelectAfiliadoATACC.checked == true){
         Swal.fire({   
             titleText: "Esta opción aun no está habilitada",
@@ -218,7 +218,7 @@ SelectAfiliadoATACC.addEventListener("change", function(){
     });
 const SelectAfiliadoConexo = document.querySelector("#checkboxAfiliadoConexo");
 SelectAfiliadoConexo.addEventListener("change", function(){
-    console.log(`Es afiliado a Conexo: ${SelectAfiliadoConexo.checked}` );
+    // console.log(`Es afiliado a Conexo: ${SelectAfiliadoConexo.checked}` );
     if (SelectAfiliadoConexo.checked == true){
         Swal.fire( {   
             titleText: "Esta opción aun no está habilitada",
@@ -238,7 +238,7 @@ const btnCalcular = document.querySelector("#btnCalcular");
 
 
 selectCategoria.addEventListener('change', function() {
-    console.log(`select categoría valor ${this.value}`);
+    // console.log(`select categoría valor ${this.value}`);
     if (this.value != "Categoría03"){
         selectJornada.disabled=true;        
         vCategoria.jornada=48;
@@ -310,7 +310,7 @@ years.forEach(anio => agregarOpcionSelect(anio, selectAnio)); // agrega como opc
 
 let months2020=["Octubre", "Noviembre", "Diciembre"]; // deberia traer el JSON para el año 2020
 let months=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-let months2023=["Enero", "Febrero", "Marzo", "Abril"];
+let months2023=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio"];
 
 let monthYear=[]; 
 function mesesDisponiblesAnioElegido(valor){
@@ -318,23 +318,23 @@ function mesesDisponiblesAnioElegido(valor){
     switch (valor){
         case "2020":
             monthYear=[].concat(months2020);
-            console.log(monthYear);
+            // console.log(monthYear);
             return monthYear;
         case "2021":
             monthYear=[].concat(months);
-            console.log(monthYear);
+            // console.log(monthYear);
             return monthYear;
         case "2022":
             monthYear=[].concat(months);
-            console.log(monthYear);
+            // console.log(monthYear);
             return monthYear;
                         
         case "2023":
             monthYear=[].concat(months2023);
-            console.log(monthYear);
+            // console.log(monthYear);
             return monthYear;
         default:
-            console.log('default');           
+            // console.log('default');           
     }
 }
 selectAnio.addEventListener('change', function() { 
@@ -353,21 +353,29 @@ function calcularHorasMensuales(jornadaSemanal){
 
 function calcularValorHora(basico, horasMensuales){
     let valorHora=basico/horasMensuales;
-    console.log(`<<< Valor de la hora: $${valorHora.toFixed(2)} >>>`);
+    // console.log(`<<< Valor de la hora: $${valorHora.toFixed(2)} >>>`);
     return  Number(valorHora.toFixed(2));
 };
 
 
 function buscarBasicoFetch(){
-    console.log(`buscarBasicoFetch`);   
+    // console.log(`buscarBasicoFetch`);   
     const anioAConsultar = Number(vCategoria.anioElegido)-2020;
     const mesAConsultar= vCategoria.mesElegido;
     const categoriaAConsultar = vCategoria.categoriaElegida;
-    
-    vCategoria.basicoCategoria =paritarias[anioAConsultar][mesAConsultar][categoriaAConsultar].basico;
-    vCategoria.noRemunerativoCategoria = paritarias[anioAConsultar][mesAConsultar][categoriaAConsultar].noRemunerativo;
-    console.log(vCategoria.basicoCategoria);
-    console.log(vCategoria.noRemunerativoCategoria);
+    const jornadaElegida = vCategoria.jornada
+
+    if(categoriaAConsultar != "Categoría03"){
+        vCategoria.basicoCategoria =paritarias[anioAConsultar][mesAConsultar][categoriaAConsultar].basico;
+        vCategoria.noRemunerativoCategoria = paritarias[anioAConsultar][mesAConsultar][categoriaAConsultar].noRemunerativo;
+    }
+    else {
+        vCategoria.basicoCategoria =paritarias[anioAConsultar][mesAConsultar][categoriaAConsultar].basico/36*jornadaElegida;
+        vCategoria.noRemunerativoCategoria = paritarias[anioAConsultar][mesAConsultar][categoriaAConsultar].noRemunerativo/36*jornadaElegida;
+    }
+    // console.log(vCategoria.basicoCategoria);
+    // console.log(vCategoria.noRemunerativoCategoria);
+    // console.log(vCategoria);
 }
 
 function completarValoresCategoria (){
@@ -413,8 +421,8 @@ function completarValoresCategoria (){
     vCategoria.afiliadoCONEXO = SelectAfiliadoConexo.checked ;
     
     
-    console.log(`vCategoria:`);
-    console.log(vCategoria);
+    // console.log(`vCategoria:`);
+    // console.log(vCategoria);
 }
 
 function calcularAntiguedad(){
@@ -439,21 +447,21 @@ function calcularPresentismo(basico, antiguedad, premios, extras50, extras100){
     let presentismo=baseCalculo*vCategoria.porcentajePresentismo;
     let tuvoFaltas= selectAusencias.checked;
     if (!tuvoFaltas){
-        console.log(`Felcicitaciones no tuviste faltas y cobras el premio completo`);
+        // console.log(`Felcicitaciones no tuviste faltas y cobras el premio completo`);
         vCategoria.porcentajePresentismo=0.1;
         presentismo=baseCalculo*vCategoria.porcentajePresentismo;
         
         return presentismo;
     } else {
-        console.log(`:/ tuviste faltas este mes`);
+        // console.log(`:/ tuviste faltas este mes`);
         let cobraPresentismo = selectTipoAusencias.value == "J";
         if (cobraPresentismo){
-            console.log(`pero al menos cobras algo de premio`)
+            // console.log(`pero al menos cobras algo de premio`)
             vCategoria.porcentajePresentismo=0.06;
             presentismo=baseCalculo*vCategoria.porcentajePresentismo;            
             return presentismo}
         else {
-            console.log(`y te quedaste sin premiop T_T`);
+            // console.log(`y te quedaste sin premiop T_T`);
             return presentismo;
         }
     }
@@ -475,49 +483,49 @@ function calcularBrutoRem(){
     let sumaBrutoRem=0;
     let valorBasico=vCategoria.basicoCategoria;
     sumaBrutoRem += valorBasico;
-    console.log (`Subtotal bruto: $${sumaBrutoRem.toFixed(2)}`);
+    // console.log (`Subtotal bruto: $${sumaBrutoRem.toFixed(2)}`);
     r_1_1.innerHTML=`<p>${vCategoria.horasTotalesMes}</p>`;
     r_1_2.innerHTML=`<p>${vCategoria.valorHora.toFixed(2)}</p>`;
     r_1_3.innerHTML=`<p>${valorBasico.toFixed(2)}</p>`;
 
     let valorAntiguedad= calcularAntiguedad();
     sumaBrutoRem += valorAntiguedad;
-    console.log (`Subtotal bruto c/antiguedad: $${sumaBrutoRem.toFixed(2)}`);
+    // console.log (`Subtotal bruto c/antiguedad: $${sumaBrutoRem.toFixed(2)}`);
     r_2_1.innerHTML=`<p>${vCategoria.antiguedad}</p>` ;   
     r_2_3.innerHTML=`<p>${valorAntiguedad.toFixed(2)}</p>`;
 
     let valorPremios= vCategoria.premiosBruto;
     sumaBrutoRem += valorPremios;
-    console.log (`Subtotal bruto c/premios: $${sumaBrutoRem.toFixed(2)}`);
+    // console.log (`Subtotal bruto c/premios: $${sumaBrutoRem.toFixed(2)}`);
     r_3_3.innerHTML=`<p>${valorPremios.toFixed(2)}</p>`;
     
     let valorExtras50 = calcularExtrasAlCincuenta();
     sumaBrutoRem += valorExtras50;
-    console.log (`Subtotal bruto c/extras 50: $${sumaBrutoRem.toFixed(2)}`);
+    // console.log (`Subtotal bruto c/extras 50: $${sumaBrutoRem.toFixed(2)}`);
     r_4_1.innerHTML=`<p>${vCategoria.cantidadExtras50}</p>`;
     r_4_2.innerHTML=`<p>${vCategoria.valorExtras50.toFixed(2)}</p>`;
     r_4_3.innerHTML=`<p>${valorExtras50.toFixed(2)}</p>`;
 
     let valorExtras100=calcularExtrasAlCien();
     sumaBrutoRem += valorExtras100;
-    console.log (`Subtotal bruto c/extras 50: $${sumaBrutoRem.toFixed(2)}`);
+    // console.log (`Subtotal bruto c/extras 50: $${sumaBrutoRem.toFixed(2)}`);
     r_5_1.innerHTML=`<p>${vCategoria.cantidadExtras100}</p>`;
     r_5_2.innerHTML=`<p>${vCategoria.valorExtras100.toFixed(2)}</p>`;
     r_5_3.innerHTML=`<p>${valorExtras100.toFixed(2)}</p>`;
 
     let valorPresentismo = calcularPresentismo(valorBasico, valorAntiguedad, valorPremios, valorExtras50, valorExtras100);// el presentismo se calcula sobre la suma de  Basico +  Antiguedad +  comisiones/premios + Hs extras  50% + Hs extras 100%
     sumaBrutoRem += valorPresentismo;
-    console.log (`Subtotal bruto c/ presentismo: $${sumaBrutoRem.toFixed(2)}`); 
+    // console.log (`Subtotal bruto c/ presentismo: $${sumaBrutoRem.toFixed(2)}`); 
     r_6_1.innerHTML=`<p>${vCategoria.porcentajePresentismo*100}%</p>`;
     r_6_3.innerHTML=`<p>${valorPresentismo.toFixed(2)}</p>`;
 
     let valorPuntualidad= calcularPuntualidad(valorBasico, valorAntiguedad, valorPremios, valorExtras50, valorExtras100); // la puntualidad  se calcula sobre la suma de  Basico +  Antiguedad +  comisiones/premios + Hs extras  50% + Hs extras 100%
     sumaBrutoRem += valorPuntualidad;
-    console.log (`Subtotal bruto c/ puntualidad: $${sumaBrutoRem.toFixed(2)}`); 
+    // console.log (`Subtotal bruto c/ puntualidad: $${sumaBrutoRem.toFixed(2)}`); 
     r_7_1.innerHTML=`<p>${vCategoria.porcentajePuntualidad*100}%</p>`;
     r_7_3.innerHTML=`<p>${valorPuntualidad.toFixed(2)}</p>`;
     
-    console.log (`Total bruto Remunerativo: $${sumaBrutoRem.toFixed(2)}`);
+    // console.log (`Total bruto Remunerativo: $${sumaBrutoRem.toFixed(2)}`);
     r_21_3.innerHTML =`<p>${sumaBrutoRem.toFixed(2)}</p>`;
     return sumaBrutoRem;
 
@@ -525,8 +533,8 @@ function calcularBrutoRem(){
 
 function calcularNoRem(){
     let noRemunerativo =(vCategoria.noRemunerativoCategoria);
-    console.log(`no rem 511:`);
-    console.log(typeof(noRemunerativo));
+    // console.log(`no rem 511:`);
+    // console.log(typeof(noRemunerativo));
     r_8_4.innerHTML = `<p>${noRemunerativo.toFixed(2)}</p>`;
     r_21_4.innerHTML = `<p>${noRemunerativo.toFixed(2)}</p>`;
     return noRemunerativo;
@@ -535,32 +543,32 @@ function calcularNoRem(){
 function calcularDescuentos(totalBrutoRem){
     let sumaDescuentos=0;
     let jubilacion=totalBrutoRem*0.11;
-    console.log(`valor jubilacion: $${jubilacion.toFixed(2)}`);
+    // console.log(`valor jubilacion: $${jubilacion.toFixed(2)}`);
     r_14_1.innerHTML = `<p>11%</p>`
     r_14_5.innerHTML = `<p>${jubilacion.toFixed(2)}</p>`
     sumaDescuentos+=jubilacion;
-    console.log (`Subtotal descuentos: $${sumaDescuentos.toFixed(2)}`);
+    // console.log (`Subtotal descuentos: $${sumaDescuentos.toFixed(2)}`);
 
     let leyINSSJP=totalBrutoRem*0.03;
-    console.log(`valor INSSJP: $${leyINSSJP.toFixed(2)}`);
+    // console.log(`valor INSSJP: $${leyINSSJP.toFixed(2)}`);
     r_15_1.innerHTML = `<p>3%</p>`
     r_15_5.innerHTML = `<p>${leyINSSJP.toFixed(2)}</p>`
     sumaDescuentos+=leyINSSJP;
-    console.log (`Subtotal descuentos: $${sumaDescuentos.toFixed(2)}`);
+    // console.log (`Subtotal descuentos: $${sumaDescuentos.toFixed(2)}`);
 
     let obraSocial=totalBrutoRem*0.03;
-    console.log(`valor obra Social: $${obraSocial.toFixed(2)}`);
+    // console.log(`valor obra Social: $${obraSocial.toFixed(2)}`);
     r_16_1.innerHTML = `<p>3%</p>`
     r_16_5.innerHTML = `<p>${obraSocial.toFixed(2)}</p>`
     sumaDescuentos+=obraSocial;
-    console.log (`Subtotal descuentos: $${sumaDescuentos.toFixed(2)}`);
+    // console.log (`Subtotal descuentos: $${sumaDescuentos.toFixed(2)}`);
 
     let aporteSolidarioGremio=totalBrutoRem*0.025; //verificar valor con delegados   
-    console.log(`valor aporte Solidario Gremio: $${aporteSolidarioGremio.toFixed(2)}`);
+    // console.log(`valor aporte Solidario Gremio: $${aporteSolidarioGremio.toFixed(2)}`);
     r_17_1.innerHTML = `<p>2.5%</p>`
     r_17_5.innerHTML = `<p>${aporteSolidarioGremio.toFixed(2)}</p>`
     sumaDescuentos+=aporteSolidarioGremio;
-    console.log (`Total descuentos: $${sumaDescuentos.toFixed(2)}`);
+    // console.log (`Total descuentos: $${sumaDescuentos.toFixed(2)}`);
     
     let aporteAfiliacion =0;
     r_18_1.innerHTML = `<p>1.5%</p>`;
@@ -583,14 +591,14 @@ function calcularDescuentos(totalBrutoRem){
 
 function calcularSueldo(){
     let brutoRem= calcularBrutoRem();
-    console.log(`brutoRem ${typeof(brutoRem)}`);
+    // console.log(`brutoRem ${typeof(brutoRem)}`);
     let noRem = Number(calcularNoRem()); 
-    console.log(`noRem ${typeof(noRem)}`);
+    // console.log(`noRem ${typeof(noRem)}`);
     let descuentos = calcularDescuentos(brutoRem);
-    console.log(`descuentos ${typeof(descuentos)}`);
+    // console.log(`descuentos ${typeof(descuentos)}`);
     let haberesNetos = brutoRem - descuentos + noRem ;
-    console.log (`Total de bolsillo: `); 
-    console.log (haberesNetos); 
+    // console.log (`Total de bolsillo: `); 
+    // console.log (haberesNetos); 
     r_22_5.innerHTML= `<p>${haberesNetos.toFixed(2)}</p>`;    
     return haberesNetos;
 };

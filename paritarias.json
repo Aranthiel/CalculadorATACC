@@ -607,43 +607,63 @@
             "Abril": {
                 "Categoría01": {
                     "descripción":  "Mantenimiento",
-                    "basico": 172257.14,
+                    "basico": 183453.85,
                     "remunerativo": 0,
-                    "noRemunerativo":0
+                    "noRemunerativo":12500
                 },
                 "Categoría02": {
                     "descripción": "Administrativo",
-                    "basico": 174066.6,
+                    "basico": 185380.93,
                     "remunerativo": 0,
-                    "noRemunerativo": 0
+                    "noRemunerativo": 12500
                 },
                 "Categoría03": {
                     "descripción": "Operaciones",
-                    "basico": 136882.98,
+                    "basico": 147780.37,
                     "remunerativo": 0,
-                    "noRemunerativo": 0
+                    "noRemunerativo": 9375
                 }
             },
             "Mayo":  {
                 "Categoría01": {
                     "descripción":  "Mantenimiento",
-                    "basico": 172257.14,
+                    "basico": 194650.57,
+                    "remunerativo": 0,
+                    "noRemunerativo":12500
+                },
+                "Categoría02": {
+                    "descripción": "Administrativo",
+                    "basico": 196695.26,
+                    "remunerativo": 0,
+                    "noRemunerativo": 12500
+                },
+                "Categoría03": {
+                    "descripción": "Operaciones",
+                    "basico": 154677.76,
+                    "remunerativo": 0,
+                    "noRemunerativo": 9375
+                }
+            },
+            "Junio":  {
+                "Categoría01": {
+                    "descripción":  "Mantenimiento",
+                    "basico": 205847.28,
                     "remunerativo": 0,
                     "noRemunerativo":0
                 },
                 "Categoría02": {
                     "descripción": "Administrativo",
-                    "basico": 174066.6,
+                    "basico": 208009.59,
                     "remunerativo": 0,
                     "noRemunerativo": 0
                 },
                 "Categoría03": {
                     "descripción": "Operaciones",
-                    "basico": 136882.98,
+                    "basico": 163575.16,
                     "remunerativo": 0,
                     "noRemunerativo": 0
                 }
             }
-        }
-    }    
+        }   
+    }
 }
